@@ -1,0 +1,195 @@
+# Every 4080 site in the CG edition's ARM9, disassembled.
+# The same three immediates and the same four unreferenced words as the
+# Anime edition, at the same addresses -- the two executables differ only
+# in the secure area and in eight BLX offsets into it.
+
+=== ARM immediate at arm9 +0x081C3C
+  02081BFC  EBFE7DF4   bl       0x020213D4
+  02081C00  E2840FCA   add     r0,r4,#808
+  02081C04  E59F1104   ldr    r1,[pc,#260]   ; 0x02081D10
+  02081C08  E2800B02   add     r0,r0,#2048
+  02081C0C  E58419DC   str    r1,[r4,#2524]
+  02081C10  EBFE7DEF   bl       0x020213D4
+  02081C14  E59F1100   ldr    r1,[pc,#256]   ; 0x02081D1C
+  02081C18  E2840EB6   add     r0,r4,#2912
+  02081C1C  E5841B24   str    r1,[r4,#2852]
+  02081C20  EBFE7DEB   bl       0x020213D4
+  02081C24  E2840F6A   add     r0,r4,#424
+  02081C28  E59F10DC   ldr    r1,[pc,#220]   ; 0x02081D0C
+  02081C2C  E2800B03   add     r0,r0,#3072
+  02081C30  E5841B5C   str    r1,[r4,#2908]
+  02081C34  EBFE7DE6   bl       0x020213D4
+  02081C38  E59F10CC   ldr    r1,[pc,#204]   ; 0x02081D0C
+  02081C3C  E2840EFF   add     r0,r4,#4080
+  02081C40  E5841DA4   str    r1,[r4,#3492]
+  02081C44  EBFE7DE2   bl       0x020213D4
+  02081C48  E59F10BC   ldr    r1,[pc,#188]   ; 0x02081D0C
+  02081C4C  E2840FDB   add     r0,r4,#876
+  02081C50  E59FC0C8   ldr    r12,[pc,#200]   ; 0x02081D20
+  02081C54  E5841FEC   str    r1,[r4,#4076]
+  02081C58  E59F30C4   ldr    r3,[pc,#196]   ; 0x02081D24
+  02081C5C  E2800A01   add     r0,r0,#4096
+  02081C60  E3A01006   mov     r1,#6
+  02081C64  E3A0208C   mov     r2,#140
+  02081C68  E58DC000   str    r12,[sp]
+  02081C6C  EBFE40A1   bl       0x02011EF8
+  02081C70  E2840FAD   add     r0,r4,#692
+  02081C74  E59FC0A4   ldr    r12,[pc,#164]   ; 0x02081D20
+  02081C78  E59F30A4   ldr    r3,[pc,#164]   ; 0x02081D24
+
+=== ARM immediate at arm9 +0x088C3C
+  02088BFC  E28D00B8   add     r0,sp,#184
+  02088C00  EBFDEAFC   bl       0x020037F8
+  02088C04  E59F123C   ldr    r1,[pc,#572]   ; 0x02088E48
+  02088C08  E28D0F66   add     r0,sp,#408
+  02088C0C  EBFDEAF9   bl       0x020037F8
+  02088C10  E59A052C   ldr    r0,[r10,#1324]
+  02088C14  EBFF039F   bl       0x02049A98
+  02088C18  E1A02000   mov     r2,r0
+  02088C1C  E59F1228   ldr    r1,[pc,#552]   ; 0x02088E4C
+  02088C20  E28D0F4E   add     r0,sp,#312
+  02088C24  EBFDEAF3   bl       0x020037F8
+  02088C28  E1D420F6   ldrsh  r2,[r4,#6]
+  02088C2C  E59F121C   ldr    r1,[pc,#540]   ; 0x02088E50
+  02088C30  E28D00D8   add     r0,sp,#216
+  02088C34  EBFDEAEF   bl       0x020037F8
+  02088C38  EA00002C   b       0x02088CF0
+  02088C3C  E2850EFF   add     r0,r5,#4080
+  02088C40  E2800A0F   add     r0,r0,#61440
+  02088C44  E1A00800   mov     r0,r0,lsl #16
+  02088C48  E1A00820   mov     r0,r0,lsr #16
+  02088C4C  E3500002   cmp     r0,#2
+  02088C50  8A000026   bhi     0x02088CF0
+  02088C54  E59F11F8   ldr    r1,[pc,#504]   ; 0x02088E54
+  02088C58  E28D0F5E   add     r0,sp,#376
+  02088C5C  EBFDEAE5   bl       0x020037F8
+  02088C60  E59A052C   ldr    r0,[r10,#1324]
+  02088C64  EBFF03A9   bl       0x02049B10
+  02088C68  E1A02000   mov     r2,r0
+  02088C6C  E59F11E4   ldr    r1,[pc,#484]   ; 0x02088E58
+  02088C70  E28D0F46   add     r0,sp,#280
+  02088C74  EBFDEADF   bl       0x020037F8
+  02088C78  E1D420F4   ldrsh  r2,[r4,#4]
+
+=== ARM immediate at arm9 +0x096298
+  02096258  E5D33001   ldrb   r3,[r3,#1]
+  0209625C  E3A04001   mov     r4,#1
+  02096260  E5CC5000   strb   r5,[r12]
+  02096264  E5CC3001   strb   r3,[r12,#1]
+  02096268  EA000006   b       0x02096288
+  0209626C  E59F30D0   ldr    r3,[pc,#208]   ; 0x02096344
+  02096270  E28DC00C   add     r12,sp,#12
+  02096274  E5D35000   ldrb   r5,[r3]
+  02096278  E5D33001   ldrb   r3,[r3,#1]
+  0209627C  E3A04001   mov     r4,#1
+  02096280  E5CC5000   strb   r5,[r12]
+  02096284  E5CC3001   strb   r3,[r12,#1]
+  02096288  E3540000   cmp     r4,#0
+  0209628C  0A000028   beq     0x02096334
+  02096290  E20136FF   and     r3,r1,#0xFF00000
+  02096294  E201EAFF   and     lr,r1,#0xFF000
+  02096298  E201CEFF   and     r12,r1,#4080
+  0209629C  E3500007   cmp     r0,#7
+  020962A0  E1A03A23   mov     r3,r3,lsr #20
+  020962A4  E1A0562E   mov     r5,lr,lsr #12
+  020962A8  E1A0E22C   mov     lr,r12,lsr #4
+  020962AC  E201C00F   and     r12,r1,#15
+  020962B0  0A000002   beq     0x020962C0
+  020962B4  E3500009   cmp     r0,#9
+  020962B8  0A00000E   beq     0x020962F8
+  020962BC  EA00001C   b       0x02096334
+  020962C0  E1A00002   mov     r0,r2
+  020962C4  E35C0000   cmp     r12,#0
+  020962C8  E28D200C   add     r2,sp,#12
+  020962CC  0A000005   beq     0x020962E8
+  020962D0  E59F1070   ldr    r1,[pc,#112]   ; 0x02096348
+  020962D4  E88D4020   stmfd sp,{r5,lr}
+
+=== literal-pool word at arm9 +0x0A7088 (no PC-relative load points at it)
+  020A7068  00000F97   muleq   r0,r7,pc
+  020A706C  00000FA6   andeq   r0,r0,r6,lsr #31
+  020A7070  00000FB5   streqh   r0,[r0,-r5]
+  020A7074  00000FC2   andeq   r0,r0,r2,asr #31
+  020A7078  00000FCE   andeq   r0,r0,lr,asr #31
+  020A707C  00000FD8   streqsb  r0,[r0,-r8]
+  020A7080  00000FE1   andeq   r0,r0,r1,ror #31
+  020A7084  00000FEA   andeq   r0,r0,r10,ror #31
+  020A7088  00000FF0   streqsh  r0,[r0,-r0]
+  020A708C  00000FF6   streqsh  r0,[r0,-r6]
+  020A7090  00000FFA   streqsh  r0,[r0,-r10]
+  020A7094  00000FFE   streqsh  r0,[r0,-lr]
+  020A7098  00000FFF   streqsh  r0,[r0,-pc]
+  020A709C  00001000   andeq   r1,r0,r0
+  020A70A0  00000FFF   streqsh  r0,[r0,-pc]
+  020A70A4  00000FFE   streqsh  r0,[r0,-lr]
+  020A70A8  00000FFA   streqsh  r0,[r0,-r10]
+  020A70AC  00000FF6   streqsh  r0,[r0,-r6]
+  020A70B0  00000FF0   streqsh  r0,[r0,-r0]
+  020A70B4  00000FEA   andeq   r0,r0,r10,ror #31
+
+=== literal-pool word at arm9 +0x0A70B0 (no PC-relative load points at it)
+  020A7090  00000FFA   streqsh  r0,[r0,-r10]
+  020A7094  00000FFE   streqsh  r0,[r0,-lr]
+  020A7098  00000FFF   streqsh  r0,[r0,-pc]
+  020A709C  00001000   andeq   r1,r0,r0
+  020A70A0  00000FFF   streqsh  r0,[r0,-pc]
+  020A70A4  00000FFE   streqsh  r0,[r0,-lr]
+  020A70A8  00000FFA   streqsh  r0,[r0,-r10]
+  020A70AC  00000FF6   streqsh  r0,[r0,-r6]
+  020A70B0  00000FF0   streqsh  r0,[r0,-r0]
+  020A70B4  00000FEA   andeq   r0,r0,r10,ror #31
+  020A70B8  00000FE1   andeq   r0,r0,r1,ror #31
+  020A70BC  00000FD8   streqsb  r0,[r0,-r8]
+  020A70C0  00000FCE   andeq   r0,r0,lr,asr #31
+  020A70C4  00000FC2   andeq   r0,r0,r2,asr #31
+  020A70C8  00000FB5   streqh   r0,[r0,-r5]
+  020A70CC  00000FA6   andeq   r0,r0,r6,lsr #31
+  020A70D0  00000F97   muleq   r0,r7,pc
+  020A70D4  00000F86   andeq   r0,r0,r6,lsl #31
+  020A70D8  00000F74   andeq   r0,r0,r4,ror pc
+  020A70DC  00000F61   andeq   r0,r0,r1,ror #30
+
+=== literal-pool word at arm9 +0x0A74E8 (no PC-relative load points at it)
+  020A74C8  FFFFFF2A   .word   0xFFFFFF2A
+  020A74CC  FFFFFF71   .word   0xFFFFFF71
+  020A74D0  FFFFFFB9   .word   0xFFFFFFB9
+  020A74D4  00001000   andeq   r1,r0,r0
+  020A74D8  00000FFF   streqsh  r0,[r0,-pc]
+  020A74DC  00000FFE   streqsh  r0,[r0,-lr]
+  020A74E0  00000FFA   streqsh  r0,[r0,-r10]
+  020A74E4  00000FF6   streqsh  r0,[r0,-r6]
+  020A74E8  00000FF0   streqsh  r0,[r0,-r0]
+  020A74EC  00000FEA   andeq   r0,r0,r10,ror #31
+  020A74F0  00000FE1   andeq   r0,r0,r1,ror #31
+  020A74F4  00000FD8   streqsb  r0,[r0,-r8]
+  020A74F8  00000FCE   andeq   r0,r0,lr,asr #31
+  020A74FC  00000FC2   andeq   r0,r0,r2,asr #31
+  020A7500  00000FB5   streqh   r0,[r0,-r5]
+  020A7504  00000FA6   andeq   r0,r0,r6,lsr #31
+  020A7508  00000F97   muleq   r0,r7,pc
+  020A750C  00000F86   andeq   r0,r0,r6,lsl #31
+  020A7510  00000F74   andeq   r0,r0,r4,ror pc
+  020A7514  00000F61   andeq   r0,r0,r1,ror #30
+
+=== literal-pool word at arm9 +0x0A7A60 (no PC-relative load points at it)
+  020A7A40  00000F97   muleq   r0,r7,pc
+  020A7A44  00000FA6   andeq   r0,r0,r6,lsr #31
+  020A7A48  00000FB5   streqh   r0,[r0,-r5]
+  020A7A4C  00000FC2   andeq   r0,r0,r2,asr #31
+  020A7A50  00000FCE   andeq   r0,r0,lr,asr #31
+  020A7A54  00000FD8   streqsb  r0,[r0,-r8]
+  020A7A58  00000FE1   andeq   r0,r0,r1,ror #31
+  020A7A5C  00000FEA   andeq   r0,r0,r10,ror #31
+  020A7A60  00000FF0   streqsh  r0,[r0,-r0]
+  020A7A64  00000FF6   streqsh  r0,[r0,-r6]
+  020A7A68  00000FFA   streqsh  r0,[r0,-r10]
+  020A7A6C  00000FFE   streqsh  r0,[r0,-lr]
+  020A7A70  00000FFF   streqsh  r0,[r0,-pc]
+  020A7A74  00000003   andeq   r0,r0,r3
+  020A7A78  00000001   andeq   r0,r0,r1
+  020A7A7C  00000005   andeq   r0,r0,r5
+  020A7A80  00000004   andeq   r0,r0,r4
+  020A7A84  00000000   andeq   r0,r0,r0
+  020A7A88  00000002   andeq   r0,r0,r2
+  020A7A8C  00000006   andeq   r0,r0,r6
+

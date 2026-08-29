@@ -1,0 +1,51 @@
+payloads examined: 47195
+
+=== Actimagine Mobiclip video (`MODS`)
+file                  bytes  frames      size      fps  audio  chan   duration
+MOV000_A.mods       2726196    1420  256x192    11.988  32000     1  0 h 01 m 58 s
+MOV000_B.mods       1732364    1420  256x192    11.988      0     0  0 h 01 m 58 s
+MOV001.mods         6213456    3894  256x192    23.976  32000     1  0 h 02 m 42 s
+MOV002.mods         1168588     750  256x192    23.976  32000     1  0 h 00 m 31 s
+MOV003.mods         1374740    1032  256x192    23.976  32000     1  0 h 00 m 43 s
+MOV004.mods         1397308     905  256x192    23.976  32000     1  0 h 00 m 38 s
+MOV005.mods         1508064     990  256x192    23.976  32000     1  0 h 00 m 41 s
+MOV006.mods         1850764    1290  256x192    23.976  32000     1  0 h 00 m 54 s
+MOV007.mods         3017416    2053  256x192    23.976  32000     1  0 h 01 m 26 s
+TOTAL              20988896   13754                          0 h 11 m 32 s
+
+  rate field 0x0BFCED91 / 2**24 = 11.9880 frames per second
+  rate field 0x17F9DB23 / 2**24 = 23.9760 frames per second
+  rate field 0x17F9DCB5 / 2**24 = 23.9760 frames per second
+  24000/1001 = 23.9760, and half of it = 11.9880
+  version tag in every header: b'N3\n\x00'
+
+=== CRI ADX / AHX
+kind                      files          bytes duration
+AHX                        4456       91033886 5 h 56 m 01 s
+TOTAL                      4456       91033886 5 h 56 m 01 s
+
+  rate and channel combinations actually used:
+      AHX     16364 Hz  1 channel(s)  x2959
+      AHX     12273 Hz  1 channel(s)  x1497
+
+=== NitroSDK sound archive (`SDAT`)
+  /s/sound_data.sdat, 21146560 bytes
+    blocks   : FAT , FILE, INFO, SYMB
+    members  : SBNK x254, SSAR x188, SSEQ x60, STRM x27, SWAR x3
+    STRM     : 27 members, 0 h 36 m 32 s of streamed music
+         16364 Hz  x19
+         52365 Hz  x6
+         22767 Hz  x2
+    SWAV     : 672 records, 0 h 05 m 43 s at their own rates
+         12000 Hz  x155
+          8000 Hz  x130
+         16000 Hz  x103
+         11025 Hz  x76
+         22050 Hz  x21
+         44100 Hz  x15
+    records this reader could not parse : 1
+        SWAV at 0x1648C4, 0 bytes
+
+=== what this tool could not read
+  nothing: every payload with a media tag was parsed.
+

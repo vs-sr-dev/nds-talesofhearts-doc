@@ -1,0 +1,14 @@
+# what the shipped image says, before anything is decompressed
+  image +0x00004BC4  [SDK+NINTENDO:BACKUP]
+  image +0x00004BDC  [SDK+Actimagine:Mobiclip SDK V1.0.2]
+  2 component tags visible in the packed image
+
+# what the plaintext modules say
+  arm9.bin     +0x000BC4  [SDK+NINTENDO:BACKUP]
+  arm9.bin     +0x000BDC  [SDK+Actimagine:Mobiclip SDK V1.0.2]
+
+# distinct components, 2
+  [SDK+NINTENDO:BACKUP]                          in arm9.bin
+  [SDK+Actimagine:Mobiclip SDK V1.0.2]           in arm9.bin
+
+2 tags in the packed image, 2 occurrences over 2 distinct components in the plaintext

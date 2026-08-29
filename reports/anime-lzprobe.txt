@@ -1,0 +1,1371 @@
+########## arm7.bin
+_work/mod_anime/arm7.bin
+  159528 bytes, load address 0x00000000, window 40 instructions
+  39882 aligned words, 79764 halfwords
+
+  ARM
+      11913 data-processing words with an immediate operand
+         14  1. mov rD, rS, lsr #4      (the length nibble)
+         15  2. add rD, rS, #3          (the +3)
+         13  3. and rD, rS, #15         (the low nibble)
+         37  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      79764 halfwords decoded
+        114  1. lsr rD, rS, #4
+         22  2. add #3, either form
+          6  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        134  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 1
+      0x00006540
+  THUMB length nibble with a +3: 8
+      0x00025D5C
+      0x00025E98
+      0x00025EC4
+      0x00025EF0
+      0x00026008
+      0x0002606C
+      0x000260DC
+      0x0002613C
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          5 ARM   mov rD, rS, lsr #12
+        108 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 0
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 8, THUMB 25
+    length nibble within 40 of a +/-2:  ARM 3, THUMB 10
+########## arm9.bin
+_work/mod_anime/arm9.bin
+  745464 bytes, load address 0x00000000, window 40 instructions
+  186366 aligned words, 372732 halfwords
+
+  ARM
+      45339 data-processing words with an immediate operand
+         89  1. mov rD, rS, lsr #4      (the length nibble)
+         53  2. add rD, rS, #3          (the +3)
+         63  3. and rD, rS, #15         (the low nibble)
+        104  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+     372732 halfwords decoded
+        356  1. lsr rD, rS, #4
+        293  2. add #3, either form
+         29  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+       5879  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 6
+      0x000521CC
+      0x00070D7C
+      0x00070D9C
+      0x00071E04
+      0x00071E14
+      0x00071E5C
+  THUMB length nibble with a +3: 10
+      0x0003518C
+      0x0003521C
+      0x00053B20
+      0x00053B24
+      0x00078F54
+      0x00091398
+      0x000914B0
+      0x000914C8
+      0x000917E4
+      0x000B3D94
+  THUMB low nibble with a twelve-bit join: 13
+      0x00012C0C
+      0x0001A8BC
+      0x0001AA88
+      0x0001AA98
+      0x0001D7C0
+      0x0001E258
+      0x0003E53C
+      0x0004B40C
+      0x00095F38
+      0x000967BC
+      0x00096CD4
+      0x00097654
+      0x0009C40C
+
+  the halfword-token variant, length from bits 15..12
+        353 ARM   mov rD, rS, lsr #12
+        899 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 6
+      0x00051EA4
+      0x00051EC0
+      0x00051EDC
+      0x00051EF8
+      0x00051F0C
+      0x00051F88
+  THUMB lsr #12 with a +3: 66
+      0x00019308
+      0x00029260
+      0x0003FD84
+      0x0004B440
+      0x0004BA80
+      0x00079000
+      0x00079058
+      0x0007EE08
+      0x0007EE1C
+      0x0007EE30
+      0x0007EE44
+      0x0007EE80
+      0x0007EE98
+      0x0007EEA4
+      0x0007FA50
+      0x0007FA64
+      0x0007FA78
+      0x0007FA8C
+      0x0007FA9C
+      0x0007FAB8
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 19, THUMB 42
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 46
+########## ovl9_000.bin
+_work/mod_anime/ovl9_000.bin
+  298144 bytes, load address 0x00000000, window 40 instructions
+  74536 aligned words, 149072 halfwords
+
+  ARM
+      14340 data-processing words with an immediate operand
+         96  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+         11  3. and rD, rS, #15         (the low nibble)
+          2  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+     149072 halfwords decoded
+          5  1. lsr rD, rS, #4
+         14  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+       6119  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          2 ARM   mov rD, rS, lsr #12
+        151 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 16
+      0x00001378
+      0x0000139C
+      0x000048EC
+      0x0000490C
+      0x00005D28
+      0x00005DEC
+      0x00006414
+      0x0000642C
+      0x0000643C
+      0x00006700
+      0x00006754
+      0x00006764
+      0x0000677C
+      0x000067C4
+      0x000067D4
+      0x000067EC
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 1, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 1, THUMB 0
+########## ovl9_001.bin
+_work/mod_anime/ovl9_001.bin
+  584160 bytes, load address 0x00000000, window 40 instructions
+  146040 aligned words, 292080 halfwords
+
+  ARM
+      43285 data-processing words with an immediate operand
+         23  1. mov rD, rS, lsr #4      (the length nibble)
+         35  2. add rD, rS, #3          (the +3)
+          8  3. and rD, rS, #15         (the low nibble)
+        106  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+     292080 halfwords decoded
+        332  1. lsr rD, rS, #4
+        189  2. add #3, either form
+         51  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+       3201  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 9
+      0x00006EAC
+      0x00008A58
+      0x0000D18C
+      0x00017F84
+      0x00017F98
+      0x0002B388
+      0x0002B3B0
+      0x00056B50
+      0x0006EFAC
+  THUMB low nibble with a twelve-bit join: 20
+      0x0001C4DC
+      0x0002AB74
+      0x00030AD4
+      0x00039F08
+      0x00043634
+      0x0004C424
+      0x00059270
+      0x0005CCD4
+      0x0005CCF8
+      0x0005D444
+      0x0005ED84
+      0x0005FC80
+      0x00060108
+      0x0006066C
+      0x00060858
+      0x00061880
+      0x00063C00
+      0x00065000
+      0x00068F90
+      0x0006BACC
+
+  the halfword-token variant, length from bits 15..12
+        228 ARM   mov rD, rS, lsr #12
+       1010 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 45
+      0x00006E8C
+      0x00008A38
+      0x00014CA8
+      0x00015884
+      0x0001FECC
+      0x00021714
+      0x0002B370
+      0x0002D9AC
+      0x0002DA10
+      0x0002DA3C
+      0x000355B8
+      0x000355F8
+      0x00038034
+      0x00045B3C
+      0x00046290
+      0x00046CCC
+      0x0004AA60
+      0x0004EF84
+      0x00052848
+      0x00052C80
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 3, THUMB 53
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 66
+########## ovl9_002.bin
+_work/mod_anime/ovl9_002.bin
+  4256 bytes, load address 0x00000000, window 40 instructions
+  1064 aligned words, 2128 halfwords
+
+  ARM
+        326 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+       2128 halfwords decoded
+         14  1. lsr rD, rS, #4
+          0  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+         41  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+          8 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 0
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 8
+########## ovl9_003.bin
+_work/mod_anime/ovl9_003.bin
+  392800 bytes, load address 0x00000000, window 40 instructions
+  98200 aligned words, 196400 halfwords
+
+  ARM
+      28994 data-processing words with an immediate operand
+         53  1. mov rD, rS, lsr #4      (the length nibble)
+         13  2. add rD, rS, #3          (the +3)
+          7  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+     196400 halfwords decoded
+        240  1. lsr rD, rS, #4
+         60  2. add #3, either form
+          9  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+       4181  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 3
+      0x00017F24
+      0x00022A40
+      0x00022AD8
+  THUMB low nibble with a twelve-bit join: 2
+      0x0000A7AC
+      0x0003B5D8
+
+  the halfword-token variant, length from bits 15..12
+        482 ARM   mov rD, rS, lsr #12
+        559 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 8
+      0x000087D4
+      0x00009168
+      0x00024F14
+      0x00024F40
+      0x000307A0
+      0x000307CC
+      0x000308F8
+      0x00030920
+  THUMB lsr #12 with a +3: 8
+      0x00009174
+      0x00013B78
+      0x00022AB4
+      0x00030488
+      0x000304A4
+      0x000307D8
+      0x00051E68
+      0x00051E90
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 2, THUMB 26
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 38
+########## ovl9_004.bin
+_work/mod_anime/ovl9_004.bin
+  32 bytes, load address 0x00000000, window 40 instructions
+  8 aligned words, 16 halfwords
+
+  ARM
+          0 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+         16 halfwords decoded
+          0  1. lsr rD, rS, #4
+          0  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+          0  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+          0 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 0
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_005.bin
+_work/mod_anime/ovl9_005.bin
+  15264 bytes, load address 0x00000000, window 40 instructions
+  3816 aligned words, 7632 halfwords
+
+  ARM
+       1234 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+       7632 halfwords decoded
+          8  1. lsr rD, rS, #4
+          2  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        104  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          6 ARM   mov rD, rS, lsr #12
+         23 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 0
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_006.bin
+_work/mod_anime/ovl9_006.bin
+  48192 bytes, load address 0x00000000, window 40 instructions
+  12048 aligned words, 24096 halfwords
+
+  ARM
+       4230 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+         14  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      24096 halfwords decoded
+         22  1. lsr rD, rS, #4
+          5  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        347  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 1
+      0x00006210
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          1 ARM   mov rD, rS, lsr #12
+        221 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 1
+      0x00004BB8
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 12
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 14
+########## ovl9_007.bin
+_work/mod_anime/ovl9_007.bin
+  24192 bytes, load address 0x00000000, window 40 instructions
+  6048 aligned words, 12096 halfwords
+
+  ARM
+       2349 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      12096 halfwords decoded
+          4  1. lsr rD, rS, #4
+         34  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+         78  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 1
+      0x000031B0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+        281 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 29
+      0x000015C8
+      0x000015DC
+      0x00001604
+      0x00002730
+      0x00002A3C
+      0x00002D90
+      0x00002D9C
+      0x00002DB0
+      0x00002DC4
+      0x00002FA4
+      0x00002FB4
+      0x00002FC8
+      0x00002FDC
+      0x00003E54
+      0x00004290
+      0x000042A0
+      0x00004394
+      0x00004500
+      0x00004550
+      0x000045FC
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 3
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_008.bin
+_work/mod_anime/ovl9_008.bin
+  38208 bytes, load address 0x00000000, window 40 instructions
+  9552 aligned words, 19104 halfwords
+
+  ARM
+       3559 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      19104 halfwords decoded
+          6  1. lsr rD, rS, #4
+         30  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        121  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+        331 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 15
+      0x00001878
+      0x0000188C
+      0x000018B4
+      0x00003690
+      0x000036A4
+      0x00006104
+      0x000061C4
+      0x00006338
+      0x00006368
+      0x00008EA0
+      0x00008ECC
+      0x00008EDC
+      0x00008F60
+      0x00008FA0
+      0x00008FB0
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 2
+########## ovl9_009.bin
+_work/mod_anime/ovl9_009.bin
+  35616 bytes, load address 0x00000000, window 40 instructions
+  8904 aligned words, 17808 halfwords
+
+  ARM
+       3395 data-processing words with an immediate operand
+         56  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      17808 halfwords decoded
+          1  1. lsr rD, rS, #4
+         27  2. add #3, either form
+          1  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        289  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+        291 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 12
+      0x00003484
+      0x00003498
+      0x000034AC
+      0x00007248
+      0x00007264
+      0x00007CD0
+      0x0000824C
+      0x00008278
+      0x000083C8
+      0x00008408
+      0x00008418
+      0x00008604
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 1, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_010.bin
+_work/mod_anime/ovl9_010.bin
+  16736 bytes, load address 0x00000000, window 40 instructions
+  4184 aligned words, 8368 halfwords
+
+  ARM
+       1478 data-processing words with an immediate operand
+         55  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+       8368 halfwords decoded
+          4  1. lsr rD, rS, #4
+          1  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        190  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+         55 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 0
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 26, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 2, THUMB 0
+########## ovl9_011.bin
+_work/mod_anime/ovl9_011.bin
+  32480 bytes, load address 0x00000000, window 40 instructions
+  8120 aligned words, 16240 halfwords
+
+  ARM
+       3210 data-processing words with an immediate operand
+          2  1. mov rD, rS, lsr #4      (the length nibble)
+          2  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      16240 halfwords decoded
+          1  1. lsr rD, rS, #4
+          6  2. add #3, either form
+         12  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        148  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 12
+      0x00000010
+      0x00000038
+      0x00000060
+      0x00000090
+      0x000000A8
+      0x000000D8
+      0x000000F0
+      0x00000120
+      0x00000138
+      0x00003D8C
+      0x000071A4
+      0x000075D8
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+        306 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 4
+      0x000022D0
+      0x00002300
+      0x000023B8
+      0x00002890
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_012.bin
+_work/mod_anime/ovl9_012.bin
+  18464 bytes, load address 0x00000000, window 40 instructions
+  4616 aligned words, 9232 halfwords
+
+  ARM
+       1577 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+       9232 halfwords decoded
+          5  1. lsr rD, rS, #4
+          3  2. add #3, either form
+          1  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+         67  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          1 ARM   mov rD, rS, lsr #12
+        101 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 2
+      0x000026E8
+      0x00002700
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 2
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_013.bin
+_work/mod_anime/ovl9_013.bin
+  20000 bytes, load address 0x00000000, window 40 instructions
+  5000 aligned words, 10000 halfwords
+
+  ARM
+       1785 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      10000 halfwords decoded
+          5  1. lsr rD, rS, #4
+          2  2. add #3, either form
+          1  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+         64  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          1 ARM   mov rD, rS, lsr #12
+        132 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 1
+      0x00002E84
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_014.bin
+_work/mod_anime/ovl9_014.bin
+  13408 bytes, load address 0x00000000, window 40 instructions
+  3352 aligned words, 6704 halfwords
+
+  ARM
+       1320 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+       6704 halfwords decoded
+          2  1. lsr rD, rS, #4
+          6  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+         53  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 1
+      0x000016D8
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+        127 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 5
+      0x000016C4
+      0x000016E0
+      0x00001EE4
+      0x00001EF0
+      0x00001FA0
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 1
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_015.bin
+_work/mod_anime/ovl9_015.bin
+  7200 bytes, load address 0x00000000, window 40 instructions
+  1800 aligned words, 3600 halfwords
+
+  ARM
+        214 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+       3600 halfwords decoded
+          0  1. lsr rD, rS, #4
+          0  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+         23  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+          9 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 0
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_016.bin
+_work/mod_anime/ovl9_016.bin
+  24224 bytes, load address 0x00000000, window 40 instructions
+  6056 aligned words, 12112 halfwords
+
+  ARM
+       2270 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          1  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      12112 halfwords decoded
+          5  1. lsr rD, rS, #4
+          4  2. add #3, either form
+          4  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        115  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+         57 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 4
+      0x00002DA8
+      0x00002DE4
+      0x00002E20
+      0x00002E38
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 1
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_017.bin
+_work/mod_anime/ovl9_017.bin
+  32928 bytes, load address 0x00000000, window 40 instructions
+  8232 aligned words, 16464 halfwords
+
+  ARM
+       3262 data-processing words with an immediate operand
+          1  1. mov rD, rS, lsr #4      (the length nibble)
+          5  2. add rD, rS, #3          (the +3)
+          2  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      16464 halfwords decoded
+          3  1. lsr rD, rS, #4
+         47  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        131  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 1
+      0x00001E70
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+        215 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 55
+      0x00001CDC
+      0x000022F4
+      0x00004838
+      0x00004870
+      0x000048BC
+      0x000048D8
+      0x000048F0
+      0x000048FC
+      0x00004958
+      0x000049A8
+      0x00004A14
+      0x00004A34
+      0x00004A4C
+      0x00004A58
+      0x00004AB4
+      0x00004B24
+      0x00004B84
+      0x00004BB4
+      0x00004C80
+      0x00004CDC
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_018.bin
+_work/mod_anime/ovl9_018.bin
+  28704 bytes, load address 0x00000000, window 40 instructions
+  7176 aligned words, 14352 halfwords
+
+  ARM
+       2684 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          3  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      14352 halfwords decoded
+          4  1. lsr rD, rS, #4
+          4  2. add #3, either form
+          3  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        112  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          2 ARM   mov rD, rS, lsr #12
+        132 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 7
+      0x00002B2C
+      0x00002B54
+      0x00002B68
+      0x00002BC4
+      0x00002BD4
+      0x00002BE4
+      0x00002BF4
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_019.bin
+_work/mod_anime/ovl9_019.bin
+  18304 bytes, load address 0x00000000, window 40 instructions
+  4576 aligned words, 9152 halfwords
+
+  ARM
+        837 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+       9152 halfwords decoded
+          2  1. lsr rD, rS, #4
+          0  2. add #3, either form
+          1  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        173  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+         23 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 0
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_020.bin
+_work/mod_anime/ovl9_020.bin
+  31648 bytes, load address 0x00000000, window 40 instructions
+  7912 aligned words, 15824 halfwords
+
+  ARM
+       3246 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          1  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      15824 halfwords decoded
+          1  1. lsr rD, rS, #4
+         23  2. add #3, either form
+          3  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        206  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 1
+      0x00003FFC
+
+  the halfword-token variant, length from bits 15..12
+          1 ARM   mov rD, rS, lsr #12
+        354 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 5
+      0x00002EBC
+      0x00002ECC
+      0x00002EE0
+      0x00005004
+      0x0000519C
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 1
+########## ovl9_021.bin
+_work/mod_anime/ovl9_021.bin
+  65248 bytes, load address 0x00000000, window 40 instructions
+  16312 aligned words, 32624 halfwords
+
+  ARM
+       3099 data-processing words with an immediate operand
+          7  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          4  3. and rD, rS, #15         (the low nibble)
+        214  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      32624 halfwords decoded
+         24  1. lsr rD, rS, #4
+         29  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+       1094  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 2
+      0x0000CDC0
+      0x0000CE0C
+  THUMB length nibble with a +3: 1
+      0x0000ACE2
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          3 ARM   mov rD, rS, lsr #12
+         29 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 1
+      0x0000ACDC
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 1, THUMB 1
+    length nibble within 40 of a +/-2:  ARM 2, THUMB 0
+########## ovl9_022.bin
+_work/mod_anime/ovl9_022.bin
+  28480 bytes, load address 0x00000000, window 40 instructions
+  7120 aligned words, 14240 halfwords
+
+  ARM
+       2377 data-processing words with an immediate operand
+          1  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      14240 halfwords decoded
+          3  1. lsr rD, rS, #4
+          3  2. add #3, either form
+          1  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        234  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          9 ARM   mov rD, rS, lsr #12
+        145 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 4
+      0x0000373C
+      0x00003764
+      0x00003774
+      0x00003BC8
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 1
+########## ovl9_023.bin
+_work/mod_anime/ovl9_023.bin
+  14016 bytes, load address 0x00000000, window 40 instructions
+  3504 aligned words, 7008 halfwords
+
+  ARM
+       1323 data-processing words with an immediate operand
+          2  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+       7008 halfwords decoded
+          2  1. lsr rD, rS, #4
+          3  2. add #3, either form
+          1  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+         52  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+        138 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 1
+      0x00002808
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 1
+########## ovl9_024.bin
+_work/mod_anime/ovl9_024.bin
+  16608 bytes, load address 0x00000000, window 40 instructions
+  4152 aligned words, 8304 halfwords
+
+  ARM
+       1559 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+       8304 halfwords decoded
+          1  1. lsr rD, rS, #4
+          4  2. add #3, either form
+          1  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+         71  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+        219 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 2
+      0x0000264C
+      0x000026A8
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 1
+########## ovl9_025.bin
+_work/mod_anime/ovl9_025.bin
+  7072 bytes, load address 0x00000000, window 40 instructions
+  1768 aligned words, 3536 halfwords
+
+  ARM
+        647 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+       3536 halfwords decoded
+          1  1. lsr rD, rS, #4
+          2  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+         38  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+         38 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 0
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_026.bin
+_work/mod_anime/ovl9_026.bin
+  8032 bytes, load address 0x00000000, window 40 instructions
+  2008 aligned words, 4016 halfwords
+
+  ARM
+        712 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+       4016 halfwords decoded
+          2  1. lsr rD, rS, #4
+         13  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+         39  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+         47 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 0
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_027.bin
+_work/mod_anime/ovl9_027.bin
+  32672 bytes, load address 0x00000000, window 40 instructions
+  8168 aligned words, 16336 halfwords
+
+  ARM
+       2992 data-processing words with an immediate operand
+          3  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      16336 halfwords decoded
+          6  1. lsr rD, rS, #4
+          4  2. add #3, either form
+          2  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        128  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          2 ARM   mov rD, rS, lsr #12
+        256 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 3
+      0x000075BC
+      0x000075CC
+      0x00007BAC
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 2, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_028.bin
+_work/mod_anime/ovl9_028.bin
+  22016 bytes, load address 0x00000000, window 40 instructions
+  5504 aligned words, 11008 halfwords
+
+  ARM
+       2235 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      11008 halfwords decoded
+          1  1. lsr rD, rS, #4
+          1  2. add #3, either form
+          2  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        102  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          1 ARM   mov rD, rS, lsr #12
+         96 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 0
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 0
+########## ovl9_029.bin
+_work/mod_anime/ovl9_029.bin
+  50272 bytes, load address 0x00000000, window 40 instructions
+  12568 aligned words, 25136 halfwords
+
+  ARM
+       4715 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          5  2. add rD, rS, #3          (the +3)
+          3  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+      25136 halfwords decoded
+          5  1. lsr rD, rS, #4
+          6  2. add #3, either form
+          3  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        258  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+        375 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 5
+      0x0000ACF0
+      0x0000AE28
+      0x0000AF18
+      0x0000AF68
+      0x0000AF84
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 1
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 1
+########## ovl9_030.bin
+_work/mod_anime/ovl9_030.bin
+  17696 bytes, load address 0x00000000, window 40 instructions
+  4424 aligned words, 8848 halfwords
+
+  ARM
+       1491 data-processing words with an immediate operand
+          0  1. mov rD, rS, lsr #4      (the length nibble)
+          0  2. add rD, rS, #3          (the +3)
+          0  3. and rD, rS, #15         (the low nibble)
+          0  4. orr/add ..., lsl #8     (the twelve-bit join)
+  THUMB
+       8848 halfwords decoded
+          5  1. lsr rD, rS, #4
+          1  2. add #3, either form
+          0  3. mov #15, and 0 lsl #28 / lsr #28 pairs
+        184  4. lsl rD, rS, #8
+
+  co-locations, within 40 instructions either way
+  ARM   length nibble with a +3: 0
+  ARM   low nibble with a twelve-bit join: 0
+  THUMB length nibble with a +3: 0
+  THUMB low nibble with a twelve-bit join: 0
+
+  the halfword-token variant, length from bits 15..12
+          0 ARM   mov rD, rS, lsr #12
+         46 THUMB lsr rD, rS, #12
+  ARM   lsr #12 with a +3: 0
+  THUMB lsr #12 with a +3: 0
+
+  the do/while variant, where the +3 is carried as +2 or +1
+    length nibble within 40 of a +/-1:  ARM 0, THUMB 0
+    length nibble within 40 of a +/-2:  ARM 0, THUMB 2

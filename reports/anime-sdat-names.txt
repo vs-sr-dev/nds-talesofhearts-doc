@@ -1,0 +1,879 @@
+== SEQ: 60 entries ==
+     0  MUS_B000
+     1  MUS_B003
+     2  MUS_B008
+     3  MUS_B009
+     4  MUS_D000
+     5  MUS_F000
+     6  MUS_T003
+     7  MUS_E001
+     8  MUS_E002
+     9  MUS_T000
+    10  MUS_T001
+    11  MUS_B999
+    12  MUS_E003
+    13  MUS_D006
+    14  MUS_D001
+    15  MUS_T004
+    16  MUS_E000
+    17  MUS_I000
+    18  MUS_I001
+    19  MUS_T007
+    20  MUS_D002
+    21  MUS_B001
+    22  MUS_B002
+    23  MUS_B004
+    24  MUS_B005
+    25  MUS_D008
+    26  MUS_D010
+    27  MUS_E004
+    28  MUS_E005
+    29  MUS_F001
+    30  MUS_T002
+    31  MUS_T005
+    32  MUS_E007
+    33  MUS_D003
+    34  MUS_D004
+    35  MUS_D005
+    36  MUS_E008
+    37  MUS_T008
+    38  MUS_D011
+    39  MUS_D007
+    40  MUS_D009
+    41  MUS_F002
+    42  MUS_F003
+    43  MUS_M000
+    44  MUS_I002
+    45  MUS_B007
+    46  MUS_T006
+    47  MUS_E006
+    48  MUS_E014
+    49  MUS_E009
+    50  MUS_E010
+    51  MUS_S000
+    52  MUS_E011
+    53  MUS_B006
+    54  MUS_B010
+    55  MUS_E013
+    56  MUS_E012
+    57  MUS_S001
+    58  MUS_B012
+    59  MUS_B011
+== SEQARC: 192 entries ==
+     0  SQA_SYS
+     1  SQA_MAP
+     2  SQA_BTL
+     3  SQA_MNU
+     4  SQA_MNB
+     5  SQA_AMU
+     6  SQA_BAL
+     7  SQA_BIS
+     8  SQA_CAM
+     9  SQA_CAP
+    10  SQA_CAS
+    11  SQA_CAV
+    12  SQA_CLD
+    13  SQA_DEC
+    14  SQA_DES
+    15  SQA_DRA
+    16  SQA_EXD
+    17  SQA_EXT
+    18  SQA_FSH
+    19  SQA_GAT
+    20  SQA_HAK
+    21  SQA_HID
+    22  SQA_HOT
+    23  SQA_ISL
+    24  SQA_KAG
+    25  SQA_LAK
+    26  SQA_LIT
+    27  SQA_LOC
+    28  SQA_MIS
+    29  SQA_MON
+    30  SQA_MOU
+    31  SQA_OAS
+    32  SQA_PAS
+    33  SQA_PLN
+    34  SQA_PYR
+    35  SQA_RED
+    36  SQA_RIG
+    37  SQA_SHP
+    38  SQA_SNO
+    39  SQA_STP
+    40  SQA_STR
+    41  SQA_TEM
+    42  SQA_TOW
+    43  SQA_UND
+    44  SQA_VOL
+    45  SQA_WHA
+    46  SQA_KG2
+    47  SQA_E01
+    48  SQA_E02
+    49  SQA_E03
+    50  SQA_E04
+    51  SQA_E05
+    52  SQA_E06
+    53  SQA_E07
+    54  SQA_E09
+    55  SQA_E10
+    56  SQA_E11
+    57  SQA_E14
+    58  SQA_E15
+    59  SQA_E16
+    60  SQA_E18
+    61  SQA_E19
+    62  SQA_E21
+    63  SQA_E23
+    64  SQA_E99
+    65  SQA_EVS
+    66  SQA_EVF
+    67  SQA_001
+    68  SQA_002
+    69  SQA_003
+    70  SQA_004
+    71  SQA_005
+    72  SQA_006
+    73  SQA_007
+    74  SQA_008
+    75  SQA_009
+    76  SQA_010
+    77  SQA_011
+    78  SQA_012
+    79  SQA_013
+    80  SQA_014
+    81  SQA_015
+    82  SQA_016
+    83  SQA_017
+    84  SQA_018
+    85  SQA_019
+    86  SQA_020
+    87  SQA_021
+    88  SQA_022
+    89  SQA_023
+    90  SQA_024
+    91  SQA_025
+    92  SQA_026
+    93  SQA_027
+    94  SQA_028
+    95  SQA_029
+    96  SQA_030
+    97  SQA_031
+    98  SQA_032
+    99  SQA_033
+   100  SQA_034
+   101  SQA_035
+   102  SQA_036
+   103  SQA_037
+   104  SQA_038
+   105  SQA_039
+   106  SQA_040
+   107  SQA_041
+   108  SQA_042
+   109  SQA_043
+   110  SQA_044
+   111  SQA_045
+   112  SQA_046
+   113  SQA_047
+   114  SQA_048
+   115  SQA_049
+   116  SQA_050
+   117  SQA_051
+   118  SQA_052
+   119  SQA_053
+   120  SQA_054
+   121  SQA_055
+   122  SQA_056
+   123  SQA_057
+   124  SQA_058
+   125  SQA_059
+   126  SQA_060
+   127  SQA_061
+   128  SQA_062
+   129  SQA_063
+   130  SQA_064
+   131  SQA_065
+   132  SQA_066
+   133  SQA_067
+   134  SQA_068
+   135  SQA_069
+   136  SQA_070
+   137  SQA_071
+   138  SQA_072
+   139  SQA_073
+   140  SQA_074
+   141  SQA_075
+   142  SQA_076
+   143  SQA_077
+   144  SQA_078
+   145  SQA_079
+   146  SQA_080
+   147  SQA_081
+   148  SQA_082
+   149  SQA_083
+   150  SQA_084
+   151  SQA_085
+   152  SQA_086
+   153  SQA_087
+   154  SQA_088
+   155  SQA_089
+   156  SQA_090
+   157  SQA_091
+   158  SQA_092
+   159  SQA_093
+   160  SQA_094
+   161  SQA_095
+   162  SQA_096
+   163  SQA_097
+   164  SQA_098
+   165  SQA_099
+   166  SQA_100
+   167  SQA_B01
+   168  SQA_B02
+   169  SQA_B03
+   170  SQA_B04
+   171  SQA_B05
+   172  SQA_B06
+   173  SQA_B07
+   174  SQA_B10
+   175  SQA_B11
+   176  SQA_B12
+   177  SQA_B13
+   178  SQA_B14
+   179  SQA_B15
+   180  SQA_B16
+   181  SQA_B17
+   182  SQA_B18
+   183  SQA_B19
+   184  SQA_B20
+   185  SQA_B21
+   186  SQA_B22
+   187  SQA_B23
+   188  SQA_B24
+   189  SQA_B25
+   190  SQA_B26
+   191  SQA_B27
+== BANK: 293 entries ==
+     0  BNK_MUS_ALL
+     1  BNK_MUS_B000
+     2  BNK_MUS_B003
+     3  BNK_MUS_B008
+     4  BNK_MUS_B009
+     5  BNK_MUS_D000
+     6  BNK_MUS_F000
+     7  BNK_MUS_T003
+     8  BNK_MUS_E001
+     9  BNK_MUS_E002
+    10  BNK_MUS_T000
+    11  BNK_MUS_T001
+    12  BNK_MUS_B999
+    13  BNK_MUS_E003
+    14  BNK_MUS_D006
+    15  BNK_MUS_D001
+    16  BNK_MUS_T004
+    17  BNK_MUS_E000
+    18  BNK_MUS_I000
+    19  BNK_MUS_I001
+    20  BNK_MUS_T007
+    21  BNK_MUS_D002
+    22  BNK_MUS_B001
+    23  BNK_MUS_B002
+    24  BNK_MUS_B004
+    25  BNK_MUS_B005
+    26  BNK_MUS_D008
+    27  BNK_MUS_D010
+    28  BNK_MUS_E004
+    29  BNK_MUS_E005
+    30  BNK_MUS_F001
+    31  BNK_MUS_T002
+    32  BNK_MUS_T005
+    33  BNK_MUS_e007
+    34  BNK_MUS_D003
+    35  BNK_MUS_D004
+    36  BNK_MUS_D005
+    37  BNK_MUS_E008
+    38  BNK_MUS_T008
+    39  BNK_MUS_D011
+    40  BNK_MUS_D007
+    41  BNK_MUS_D009
+    42  BNK_MUS_F002
+    43  BNK_MUS_F003
+    44  BNK_MUS_M000
+    45  BNK_MUS_I002
+    46  BNK_MUS_B007
+    47  BNK_MUS_T006
+    48  BNK_MUS_E006
+    49  BNK_MUS_E014
+    50  BNK_MUS_E009
+    51  BNK_MUS_E010
+    52  BNK_MUS_S000
+    53  BNK_MUS_E011
+    54  BNK_MUS_B006
+    55  BNK_MUS_B010
+    56  BNK_MUS_E013
+    57  BNK_MUS_E012
+    58  BNK_MUS_S001
+    59  BNK_MUS_B012
+    60  BNK_MUS_B011
+    61  <no symbol>
+    62  <no symbol>
+    63  <no symbol>
+    64  <no symbol>
+    65  <no symbol>
+    66  <no symbol>
+    67  <no symbol>
+    68  <no symbol>
+    69  <no symbol>
+    70  <no symbol>
+    71  <no symbol>
+    72  <no symbol>
+    73  <no symbol>
+    74  <no symbol>
+    75  <no symbol>
+    76  <no symbol>
+    77  <no symbol>
+    78  <no symbol>
+    79  <no symbol>
+    80  <no symbol>
+    81  <no symbol>
+    82  <no symbol>
+    83  <no symbol>
+    84  <no symbol>
+    85  <no symbol>
+    86  <no symbol>
+    87  <no symbol>
+    88  <no symbol>
+    89  <no symbol>
+    90  <no symbol>
+    91  <no symbol>
+    92  <no symbol>
+    93  <no symbol>
+    94  <no symbol>
+    95  <no symbol>
+    96  <no symbol>
+    97  <no symbol>
+    98  <no symbol>
+    99  <no symbol>
+   100  BNK_NON
+   101  BNK_SYS
+   102  BNK_BTL
+   103  BNK_MAP
+   104  BNK_MNU
+   105  BNK_MNB
+   106  BNK_AMU
+   107  BNK_BAL
+   108  BNK_BIS
+   109  BNK_CAM
+   110  BNK_CAP
+   111  BNK_CAS
+   112  BNK_CAV
+   113  BNK_CLD
+   114  BNK_DEC
+   115  BNK_DES
+   116  BNK_DRA
+   117  BNK_EXD
+   118  BNK_EXT
+   119  BNK_FSH
+   120  BNK_GAT
+   121  BNK_HAK
+   122  BNK_HID
+   123  BNK_HOT
+   124  BNK_ISL
+   125  BNK_KAG
+   126  BNK_LAK
+   127  BNK_LIT
+   128  BNK_LOC
+   129  BNK_MIS
+   130  BNK_MON
+   131  BNK_MOU
+   132  BNK_OAS
+   133  BNK_PAS
+   134  BNK_PLN
+   135  BNK_PYR
+   136  BNK_RED
+   137  BNK_RIG
+   138  BNK_SHP
+   139  BNK_SNO
+   140  BNK_STP
+   141  BNK_STR
+   142  BNK_TEM
+   143  BNK_TOW
+   144  BNK_UND
+   145  BNK_VOL
+   146  BNK_WHA
+   147  BNK_KG2
+   148  BNK_E01
+   149  BNK_E02
+   150  BNK_E03
+   151  BNK_E04
+   152  BNK_E05
+   153  BNK_E06
+   154  BNK_E07
+   155  BNK_E09
+   156  BNK_E10
+   157  BNK_E11
+   158  BNK_E14
+   159  BNK_E15
+   160  BNK_E16
+   161  BNK_E18
+   162  BNK_E19
+   163  BNK_E21
+   164  BNK_E23
+   165  BNK_E99
+   166  BNK_EVS
+   167  BNK_EVF
+   168  BNK_001
+   169  BNK_002
+   170  BNK_003
+   171  BNK_004
+   172  BNK_005
+   173  BNK_006
+   174  BNK_007
+   175  BNK_008
+   176  BNK_009
+   177  BNK_010
+   178  BNK_011
+   179  BNK_012
+   180  BNK_013
+   181  BNK_014
+   182  BNK_015
+   183  BNK_016
+   184  BNK_017
+   185  BNK_018
+   186  BNK_019
+   187  BNK_020
+   188  BNK_021
+   189  BNK_022
+   190  BNK_023
+   191  BNK_024
+   192  BNK_025
+   193  BNK_026
+   194  BNK_027
+   195  BNK_028
+   196  BNK_029
+   197  BNK_030
+   198  BNK_031
+   199  BNK_032
+   200  BNK_033
+   201  BNK_034
+   202  BNK_035
+   203  BNK_036
+   204  BNK_037
+   205  BNK_038
+   206  BNK_039
+   207  BNK_040
+   208  BNK_041
+   209  BNK_042
+   210  BNK_043
+   211  BNK_044
+   212  BNK_045
+   213  BNK_046
+   214  BNK_047
+   215  BNK_048
+   216  BNK_049
+   217  BNK_050
+   218  BNK_051
+   219  BNK_052
+   220  BNK_053
+   221  BNK_054
+   222  BNK_055
+   223  BNK_056
+   224  BNK_057
+   225  BNK_058
+   226  BNK_059
+   227  BNK_060
+   228  BNK_061
+   229  BNK_062
+   230  BNK_063
+   231  BNK_064
+   232  BNK_065
+   233  BNK_066
+   234  BNK_067
+   235  BNK_068
+   236  BNK_069
+   237  BNK_070
+   238  BNK_071
+   239  BNK_072
+   240  BNK_073
+   241  BNK_074
+   242  BNK_075
+   243  BNK_076
+   244  BNK_077
+   245  BNK_078
+   246  BNK_079
+   247  BNK_080
+   248  BNK_081
+   249  BNK_082
+   250  BNK_083
+   251  BNK_084
+   252  BNK_085
+   253  BNK_086
+   254  BNK_087
+   255  BNK_088
+   256  BNK_089
+   257  BNK_090
+   258  BNK_091
+   259  BNK_092
+   260  BNK_093
+   261  BNK_094
+   262  BNK_095
+   263  BNK_096
+   264  BNK_097
+   265  BNK_098
+   266  BNK_099
+   267  BNK_100
+   268  BNK_B01
+   269  BNK_B02
+   270  BNK_B03
+   271  BNK_B04
+   272  BNK_B05
+   273  BNK_B06
+   274  BNK_B07
+   275  BNK_B10
+   276  BNK_B11
+   277  BNK_B12
+   278  BNK_B13
+   279  BNK_B14
+   280  BNK_B15
+   281  BNK_B16
+   282  BNK_B17
+   283  BNK_B18
+   284  BNK_B19
+   285  BNK_B20
+   286  BNK_B21
+   287  BNK_B22
+   288  BNK_B23
+   289  BNK_B24
+   290  BNK_B25
+   291  BNK_B26
+   292  BNK_B27
+== WAVEARC: 3 entries ==
+     0  WAV_ALL
+     1  WAV_ALL2
+     2  WAV_ALLV
+== PLAYER: 11 entries ==
+     0  PLQ_BGM
+     1  PLQ_SE
+     2  PLQ_VOICE
+     3  PLQ_SE_SYS
+     4  PLQ_SE_AMB
+     5  PLQ_SE_FSP
+     6  PLQ_SE_EVN
+     7  PLQ_SE_BTL_HIT
+     8  PLQ_SE_BTL
+     9  PLQ_SE_BTL_SW
+    10  PLQ_SE_BTL_MG
+== GROUP: 282 entries ==
+     0  GRP_NON
+     1  GRP_SYS
+     2  GRP_BTL
+     3  GRP_MAP
+     4  GRP_MNU
+     5  GRP_MNB
+     6  <no symbol>
+     7  <no symbol>
+     8  <no symbol>
+     9  <no symbol>
+    10  <no symbol>
+    11  <no symbol>
+    12  <no symbol>
+    13  <no symbol>
+    14  <no symbol>
+    15  <no symbol>
+    16  GRP_MAP_TOP
+    17  GRP_AMU
+    18  GRP_BAL
+    19  GRP_BIS
+    20  GRP_CAM
+    21  GRP_CAP
+    22  GRP_CAS
+    23  GRP_CAV
+    24  GRP_CLD
+    25  GRP_DEC
+    26  GRP_DES
+    27  GRP_DRA
+    28  GRP_EXD
+    29  GRP_EXT
+    30  GRP_FSH
+    31  GRP_GAT
+    32  GRP_HAK
+    33  GRP_HID
+    34  GRP_HOT
+    35  GRP_ISL
+    36  GRP_KAG
+    37  GRP_LAK
+    38  GRP_LIT
+    39  GRP_LOC
+    40  GRP_MIS
+    41  GRP_MON
+    42  GRP_MOU
+    43  GRP_OAS
+    44  GRP_PAS
+    45  GRP_PLN
+    46  GRP_PYR
+    47  GRP_RED
+    48  GRP_RIG
+    49  GRP_SHP
+    50  GRP_SNO
+    51  GRP_STP
+    52  GRP_STR
+    53  GRP_TEM
+    54  GRP_TOW
+    55  GRP_UND
+    56  GRP_VOL
+    57  GRP_WHA
+    58  GRP_KG2
+    59  GRP_E01
+    60  GRP_E02
+    61  GRP_E03
+    62  GRP_E04
+    63  GRP_E05
+    64  GRP_E06
+    65  GRP_E07
+    66  GRP_E09
+    67  GRP_E10
+    68  GRP_E11
+    69  GRP_E14
+    70  GRP_E15
+    71  GRP_E16
+    72  GRP_E18
+    73  GRP_E19
+    74  GRP_E21
+    75  GRP_E23
+    76  GRP_E99
+    77  GRP_EVS
+    78  GRP_EVF
+    79  GRP_001
+    80  GRP_002
+    81  GRP_003
+    82  GRP_004
+    83  GRP_005
+    84  GRP_006
+    85  GRP_007
+    86  GRP_008
+    87  GRP_009
+    88  GRP_010
+    89  GRP_011
+    90  GRP_012
+    91  GRP_013
+    92  GRP_014
+    93  GRP_015
+    94  GRP_016
+    95  GRP_017
+    96  GRP_018
+    97  GRP_019
+    98  GRP_020
+    99  GRP_021
+   100  GRP_022
+   101  GRP_023
+   102  GRP_024
+   103  GRP_025
+   104  GRP_026
+   105  GRP_027
+   106  GRP_028
+   107  GRP_029
+   108  GRP_030
+   109  GRP_031
+   110  GRP_032
+   111  GRP_033
+   112  GRP_034
+   113  GRP_035
+   114  GRP_036
+   115  GRP_037
+   116  GRP_038
+   117  GRP_039
+   118  GRP_040
+   119  GRP_041
+   120  GRP_042
+   121  GRP_043
+   122  GRP_044
+   123  GRP_045
+   124  GRP_046
+   125  GRP_047
+   126  GRP_048
+   127  GRP_049
+   128  GRP_050
+   129  GRP_051
+   130  GRP_052
+   131  GRP_053
+   132  GRP_054
+   133  GRP_055
+   134  GRP_056
+   135  GRP_057
+   136  GRP_058
+   137  GRP_059
+   138  GRP_060
+   139  GRP_061
+   140  GRP_062
+   141  GRP_063
+   142  GRP_064
+   143  GRP_065
+   144  GRP_066
+   145  GRP_067
+   146  GRP_068
+   147  GRP_069
+   148  GRP_070
+   149  GRP_071
+   150  GRP_072
+   151  GRP_073
+   152  GRP_074
+   153  GRP_075
+   154  GRP_076
+   155  GRP_077
+   156  GRP_078
+   157  GRP_079
+   158  GRP_080
+   159  GRP_081
+   160  GRP_082
+   161  GRP_083
+   162  GRP_084
+   163  GRP_085
+   164  GRP_086
+   165  GRP_087
+   166  GRP_088
+   167  GRP_089
+   168  GRP_090
+   169  GRP_091
+   170  GRP_092
+   171  GRP_093
+   172  GRP_094
+   173  GRP_095
+   174  GRP_096
+   175  GRP_097
+   176  GRP_098
+   177  GRP_099
+   178  GRP_100
+   179  <no symbol>
+   180  <no symbol>
+   181  <no symbol>
+   182  <no symbol>
+   183  <no symbol>
+   184  <no symbol>
+   185  <no symbol>
+   186  <no symbol>
+   187  <no symbol>
+   188  <no symbol>
+   189  <no symbol>
+   190  <no symbol>
+   191  <no symbol>
+   192  <no symbol>
+   193  <no symbol>
+   194  <no symbol>
+   195  <no symbol>
+   196  <no symbol>
+   197  <no symbol>
+   198  <no symbol>
+   199  <no symbol>
+   200  <no symbol>
+   201  <no symbol>
+   202  <no symbol>
+   203  <no symbol>
+   204  <no symbol>
+   205  <no symbol>
+   206  <no symbol>
+   207  <no symbol>
+   208  <no symbol>
+   209  <no symbol>
+   210  <no symbol>
+   211  <no symbol>
+   212  <no symbol>
+   213  <no symbol>
+   214  <no symbol>
+   215  <no symbol>
+   216  <no symbol>
+   217  <no symbol>
+   218  <no symbol>
+   219  <no symbol>
+   220  <no symbol>
+   221  <no symbol>
+   222  <no symbol>
+   223  <no symbol>
+   224  <no symbol>
+   225  <no symbol>
+   226  <no symbol>
+   227  <no symbol>
+   228  <no symbol>
+   229  <no symbol>
+   230  <no symbol>
+   231  <no symbol>
+   232  <no symbol>
+   233  <no symbol>
+   234  <no symbol>
+   235  <no symbol>
+   236  <no symbol>
+   237  <no symbol>
+   238  <no symbol>
+   239  <no symbol>
+   240  <no symbol>
+   241  <no symbol>
+   242  <no symbol>
+   243  <no symbol>
+   244  <no symbol>
+   245  <no symbol>
+   246  <no symbol>
+   247  <no symbol>
+   248  <no symbol>
+   249  <no symbol>
+   250  <no symbol>
+   251  <no symbol>
+   252  <no symbol>
+   253  <no symbol>
+   254  <no symbol>
+   255  <no symbol>
+   256  GRP_VOS
+   257  GRP_B01
+   258  GRP_B02
+   259  GRP_B03
+   260  GRP_B04
+   261  GRP_B05
+   262  GRP_B06
+   263  GRP_B07
+   264  GRP_B10
+   265  GRP_B11
+   266  GRP_B12
+   267  GRP_B13
+   268  GRP_B14
+   269  GRP_B15
+   270  GRP_B16
+   271  GRP_B17
+   272  GRP_B18
+   273  GRP_B19
+   274  GRP_B20
+   275  GRP_B21
+   276  GRP_B22
+   277  GRP_B23
+   278  GRP_B24
+   279  GRP_B25
+   280  GRP_B26
+   281  GRP_B27
+== PLAYER2: 3 entries ==
+     0  PLS_0
+     1  PLS_1
+     2  PLS_2
+== STRM: 27 entries ==
+     0  VBT_PACKED_WAVE
+     1  SES_019_FANFARE_1
+     2  SES_GAYA_001
+     3  SES_GAYA_002
+     4  SES_GAYA_003
+     5  SES_GAYA_004
+     6  SES_GAYA_005
+     7  SES_GAYA_006
+     8  SES_GAYA_007
+     9  SES_GAYA_008
+    10  SES_GAYA_009
+    11  SES_GAYA_010
+    12  SES_GAYA_011
+    13  SES_GAYA_012
+    14  SES_GAYA_013
+    15  SES_GAYA_014
+    16  SES_GAYA_015
+    17  SES_GAYA_016
+    18  SES_J000
+    19  SES_J001
+    20  SES_J002
+    21  SES_J003
+    22  SES_J004
+    23  SES_PARTY_IN
+    24  SES_PARTY_OUT
+    25  SES_INFO_GOOD
+    26  SES_INFO_BAD

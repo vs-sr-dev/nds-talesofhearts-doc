@@ -1,0 +1,20 @@
+_work/cg.nds  (0.25 GiB)
+
+signature            weight            hits       sound  found at
+-------------------- ------------ --------- -----------  ------------------------------
+AAF animation        strong               1              0x4DA6F7A
+AAC audio            strong               3           0  -
+SLZ wrapper          strong               1           0  -
+SLZ wrapper LE       strong               3           0  -
+AI node field        strong               1           0  -
+
+  "sound" counts the matches whose following field has a plausible
+  shape. Where a signature has such a test, only sound matches are
+  counted towards the verdict -- a bare four-byte magic turns up by
+  chance about once per four gigabytes. Where there is no such test,
+  a signature needs 4 hits on a file this size to count at all.
+
+  VERDICT: nothing found -- which settles very little. The
+           container may have changed while the payloads did
+           not, and the file may be packed or encrypted. Try an
+           executable through xex.py and rtti.py instead.

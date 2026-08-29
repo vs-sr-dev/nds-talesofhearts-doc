@@ -1,0 +1,23 @@
+sound_data.sdat -- 21146560 bytes
+  magic b'SDAT', BOM 0xFEFF, version 0x0100
+  declared size 21146560, header 64 bytes, 4 blocks
+    SYMB   at 0x00000040, 35378 bytes
+    INFO   at 0x00008A74, 12464 bytes
+    FAT    at 0x0000BB24, 8524 bytes
+    FILE   at 0x0000DC70, 21090128 bytes
+  SYMB present: yes
+    SEQ         60 entries,    60 named
+    SEQARC     192 entries,   192 named
+    BANK       293 entries,   254 named
+    WAVEARC      3 entries,     3 named
+    PLAYER      11 entries,    11 named
+    GROUP      282 entries,   195 named
+    PLAYER2      3 entries,     3 named
+    STRM        27 entries,    27 named
+  FAT members: 532
+    b'SBNK'    254
+    b'SSAR'    188
+    b'SSEQ'     60
+    b'STRM'     27
+    b'SWAR'      3
+  member bytes: 21082224

@@ -1,0 +1,52 @@
+image                cg.nds
+
+module parameters at file +0xBA0 (ram 0x02000BA0)
+  autoload_list         0x020B5FE0 .. 0x020B5FF8
+  autoload_start        0x020B5C60
+  static_bss            0x020B5C60 .. 0x0213A4E0
+  compressed_static_end 0x02069B18   -> ARM9 IS BLZ-packed
+                        (arm9_ram + arm9_size = 0x02069B18, agrees)
+  sdk_version           0x04027531
+
+module       rom bytes   flag   declared    blz  plaintext declared?  footer
+arm9            432920      -   33987352    yes     745464  MISMATCH  enc=416536 hdr=8 delta=312544
+arm7            159528      -          -     no     159528         -  footer implausible (enc=96376 hdr=0)
+ovl9_000        122756    yes     298144    yes     298144        OK  enc=122756 hdr=9 delta=175388
+ovl9_001        329780    yes     584160    yes     584160        OK  enc=329780 hdr=8 delta=254380
+ovl9_002          2508    yes       4256    yes       4256        OK  enc=2508 hdr=11 delta=1748
+ovl9_003        231968    yes     392800    yes     392800        OK  enc=231968 hdr=11 delta=160832
+ovl9_004            20    yes         32    yes         32        OK  enc=20 hdr=8 delta=12
+ovl9_005          9540    yes      15264    yes      15264        OK  enc=9540 hdr=8 delta=5724
+ovl9_006         22832    yes      48192    yes      48192        OK  enc=22832 hdr=8 delta=25360
+ovl9_007         12728    yes      24192    yes      24192        OK  enc=12728 hdr=8 delta=11464
+ovl9_008         19292    yes      38208    yes      38208        OK  enc=19292 hdr=10 delta=18916
+ovl9_009         18348    yes      35616    yes      35616        OK  enc=18348 hdr=10 delta=17268
+ovl9_010          9236    yes      16736    yes      16736        OK  enc=9200 hdr=9 delta=7500
+ovl9_011         16540    yes      32480    yes      32480        OK  enc=16540 hdr=11 delta=15940
+ovl9_012         10492    yes      18464    yes      18464        OK  enc=10492 hdr=10 delta=7972
+ovl9_013         11172    yes      20000    yes      20000        OK  enc=11172 hdr=9 delta=8828
+ovl9_014          7556    yes      13408    yes      13408        OK  enc=7556 hdr=10 delta=5852
+ovl9_015          2632    yes       7200    yes       7200        OK  enc=2632 hdr=8 delta=4568
+ovl9_016         12756    yes      24224    yes      24224        OK  enc=12756 hdr=10 delta=11468
+ovl9_017         16648    yes      32928    yes      32928        OK  enc=16648 hdr=9 delta=16280
+ovl9_018         13860    yes      28704    yes      28704        OK  enc=13860 hdr=11 delta=14844
+ovl9_019          7728    yes      18304    yes      18304        OK  enc=7728 hdr=10 delta=10576
+ovl9_020         16792    yes      31648    yes      31648        OK  enc=16792 hdr=11 delta=14856
+ovl9_021         28232    yes      65248    yes      65248        OK  enc=28232 hdr=9 delta=37016
+ovl9_022         15480    yes      28480    yes      28480        OK  enc=15480 hdr=10 delta=13000
+ovl9_023          7632    yes      14016    yes      14016        OK  enc=7632 hdr=8 delta=6384
+ovl9_024          9128    yes      16608    yes      16608        OK  enc=9128 hdr=9 delta=7480
+ovl9_025          3976    yes       7072    yes       7072        OK  enc=3976 hdr=9 delta=3096
+ovl9_026          4676    yes       8032    yes       8032        OK  enc=4676 hdr=8 delta=3356
+ovl9_027         17624    yes      32672    yes      32672        OK  enc=17624 hdr=11 delta=15048
+ovl9_028         11720    yes      22016    yes      22016        OK  enc=11720 hdr=9 delta=10296
+ovl9_029         25056    yes      50272    yes      50272        OK  enc=25056 hdr=10 delta=25216
+ovl9_030          9620    yes      17696    yes      17696        OK  enc=9620 hdr=11 delta=8076
+
+32 of 33 modules are BLZ-packed
+1620776 bytes on the cartridge -> 2852064 bytes of plaintext code
+
+The overlay table states each overlay's plaintext length in its own
+`ram_size` field, which is written by the linker and not by this tool.
+That is an independent check on the decompressor:
+  31 of 32 overlays decompress to exactly their declared length.

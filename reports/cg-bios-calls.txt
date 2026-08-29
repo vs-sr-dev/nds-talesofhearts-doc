@@ -1,0 +1,99 @@
+_work/mod_cg/arm9.bin -- 745464 bytes
+  1055 words / 227 halfwords match the SWI encoding at all
+  0 ARM + 30 THUMB survive the two filters (comment field NN0000,
+  service number <= 0x2B)
+
+  of those, 17 are followed by `bx lr` -- the shape of an SDK
+  SVC wrapper, and the only form that is certainly an instruction.
+
+  SET    SWI    COUNT  SERVICE
+  thumb  0x0C       1  CpuFastSet
+  thumb  0x0B       1  CpuSet
+  thumb  0x0E       1  GetCRC16
+  thumb  0x13       1  HuffUnCompReadByCallback  <-- decompression
+  thumb  0x00       1  SoftReset
+  thumb  0x10       1  BitUnPack  <-- decompression
+  thumb  0x12       1  LZ77UnCompReadByCallbackWrite16bit  <-- decompression
+  thumb  0x05       1  VBlankIntrWait
+  thumb  0x0D       1  Sqrt
+  thumb  0x04       1  IntrWait
+  thumb  0x15       1  RLUnCompReadByCallbackWrite16bit  <-- decompression
+  thumb  0x06       1  Halt
+  thumb  0x11       1  LZ77UnCompReadNormalWrite8bit  (the GBA "LZ77UnComp")  <-- decompression
+  thumb  0x14       1  RLUnCompReadNormalWrite8bit  (the GBA "RLUnComp")  <-- decompression
+  thumb  0x09       1  Div
+  thumb  0x0F       1  IsDebugger
+  thumb  0x03       1  Stop/Sleep
+
+  decompression wrappers linked into this image:
+    0x020001B6  svc #0x13 ; bx lr   HuffUnCompReadByCallback
+    0x02000288  svc #0x10 ; bx lr   BitUnPack
+    0x0200037C  svc #0x12 ; bx lr   LZ77UnCompReadByCallbackWrite16bit
+    0x0200050C  svc #0x15 ; bx lr   RLUnCompReadByCallbackWrite16bit
+    0x020005E2  svc #0x11 ; bx lr   LZ77UnCompReadNormalWrite8bit  (the GBA "LZ77UnComp")
+    0x0200064E  svc #0x14 ; bx lr   RLUnCompReadNormalWrite8bit  (the GBA "RLUnComp")
+
+  A wrapper being *linked* says only that the SDK library was
+  linked.  The question is whether anything calls it, so every
+  branch in the image is resolved and counted against each one.
+  15190 distinct branch targets in this image
+  3797 distinct branch targets in _work/mod_cg/arm7.bin (loaded at 0x02380000)
+  4290 distinct branch targets in _work/mod_cg/ovl9_000.bin (loaded at 0x0213A4E0)
+  8924 distinct branch targets in _work/mod_cg/ovl9_001.bin (loaded at 0x0213A4E0)
+  100 distinct branch targets in _work/mod_cg/ovl9_002.bin (loaded at 0x0213A4E0)
+  6588 distinct branch targets in _work/mod_cg/ovl9_003.bin (loaded at 0x0213A4E0)
+  0 distinct branch targets in _work/mod_cg/ovl9_004.bin (loaded at 0x0213A4E0)
+  374 distinct branch targets in _work/mod_cg/ovl9_005.bin (loaded at 0x0213A4E0)
+  822 distinct branch targets in _work/mod_cg/ovl9_006.bin (loaded at 0x0213A4E0)
+  421 distinct branch targets in _work/mod_cg/ovl9_007.bin (loaded at 0x0213A4E0)
+  626 distinct branch targets in _work/mod_cg/ovl9_008.bin (loaded at 0x0213A4E0)
+  633 distinct branch targets in _work/mod_cg/ovl9_009.bin (loaded at 0x0213A4E0)
+  373 distinct branch targets in _work/mod_cg/ovl9_010.bin (loaded at 0x0213A4E0)
+  464 distinct branch targets in _work/mod_cg/ovl9_011.bin (loaded at 0x0213A4E0)
+  259 distinct branch targets in _work/mod_cg/ovl9_012.bin (loaded at 0x0213A4E0)
+  273 distinct branch targets in _work/mod_cg/ovl9_013.bin (loaded at 0x0213A4E0)
+  222 distinct branch targets in _work/mod_cg/ovl9_014.bin (loaded at 0x0213A4E0)
+  68 distinct branch targets in _work/mod_cg/ovl9_015.bin (loaded at 0x0213A4E0)
+  328 distinct branch targets in _work/mod_cg/ovl9_016.bin (loaded at 0x0213A4E0)
+  408 distinct branch targets in _work/mod_cg/ovl9_017.bin (loaded at 0x0213A4E0)
+  451 distinct branch targets in _work/mod_cg/ovl9_018.bin (loaded at 0x0213A4E0)
+  275 distinct branch targets in _work/mod_cg/ovl9_019.bin (loaded at 0x0213A4E0)
+  530 distinct branch targets in _work/mod_cg/ovl9_020.bin (loaded at 0x0213A4E0)
+  743 distinct branch targets in _work/mod_cg/ovl9_021.bin (loaded at 0x0213A4E0)
+  513 distinct branch targets in _work/mod_cg/ovl9_022.bin (loaded at 0x0213A4E0)
+  267 distinct branch targets in _work/mod_cg/ovl9_023.bin (loaded at 0x0213A4E0)
+  285 distinct branch targets in _work/mod_cg/ovl9_024.bin (loaded at 0x0213A4E0)
+  151 distinct branch targets in _work/mod_cg/ovl9_025.bin (loaded at 0x0213A4E0)
+  165 distinct branch targets in _work/mod_cg/ovl9_026.bin (loaded at 0x0213A4E0)
+  416 distinct branch targets in _work/mod_cg/ovl9_027.bin (loaded at 0x0213A4E0)
+  367 distinct branch targets in _work/mod_cg/ovl9_028.bin (loaded at 0x0213A4E0)
+  752 distinct branch targets in _work/mod_cg/ovl9_029.bin (loaded at 0x0213A4E0)
+  343 distinct branch targets in _work/mod_cg/ovl9_030.bin (loaded at 0x0213A4E0)
+  43954 distinct branch targets over all 33 images
+
+  WRAPPER      SWI    SERVICE                                        CALL SITES
+  0x02000082  0x0C   CpuFastSet                                       0
+  0x020000EE  0x0B   CpuSet                                           1
+        arm blx    from 0x0206B958
+  0x02000150  0x0E   GetCRC16                                         0
+  0x020001B6  0x13   HuffUnCompReadByCallback                         0  <-- decompression
+  0x02000224  0x00   SoftReset                                        0
+  0x02000288  0x10   BitUnPack                                        0  <-- decompression
+  0x0200037C  0x12   LZ77UnCompReadByCallbackWrite16bit               0  <-- decompression
+  0x020003E2  0x05   VBlankIntrWait                                   0
+  0x02000434  0x0D   Sqrt                                             0
+  0x0200049E  0x04   IntrWait                                         0
+  0x0200050C  0x15   RLUnCompReadByCallbackWrite16bit                 0  <-- decompression
+  0x02000588  0x06   Halt                                             0
+  0x020005E2  0x11   LZ77UnCompReadNormalWrite8bit  (the GBA "LZ77U   0  <-- decompression
+  0x0200064E  0x14   RLUnCompReadNormalWrite8bit  (the GBA "RLUnCom   0  <-- decompression
+  0x020006C6  0x09   Div                                              0
+  0x0200072E  0x0F   IsDebugger                                       0
+  0x020007A4  0x03   Stop/Sleep                                       7
+        arm blx    from 0x0206BB8C
+        arm blx    from 0x0206BBF0
+        arm blx    from 0x0206BEA8
+        arm blx    from 0x0206D6EC
+        arm blx    from 0x02072374
+        arm blx    from 0x02072420
+        arm blx    from 0x02074234

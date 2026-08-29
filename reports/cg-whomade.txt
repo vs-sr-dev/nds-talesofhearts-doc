@@ -1,0 +1,152 @@
+========================================================================
+who made it: every needle, in ASCII, Shift-JIS and UTF-16LE
+========================================================================
+
+34 files, 271287520 bytes
+
+-- company and middleware names, ASCII (case-insensitive) --
+   namco                    6   cg.nds x6
+   bandai                   0   
+   namcobandai              0   
+   namco bandai             0   
+   wolfteam                 0   
+   wolf team                0   
+   tales studio             0   
+   talesstudio              0   
+   alfa system              0   
+   alfasystem               0   
+   ganbarion                0   
+   dimps                    0   
+   telenet                  0   
+   nintendo                 2   cg.nds x1, arm9.bin x1
+   hudson                   0   
+   criware                  3   cg.nds x3
+   cri middleware           0   
+   cri                      1   arm9.bin x1
+   actimagine               2   cg.nds x1, arm9.bin x1
+   mobiclip                 2   cg.nds x1, arm9.bin x1
+   monolith                 0   
+   tri-crescendo            0   
+   tri-ace                  0   
+
+-- company names, Shift-JIS --
+   ナムコ            Namco              0   
+   バンダイ           Bandai             0   
+   バンダイナムコ        Bandai Namco       0   
+   テイルズスタジオ       Tales Studio       0   
+   ウルフチーム         Wolf Team          0   
+   株式会社           K.K. / Inc.        0   
+   テイルズ           Tales             51   cg.nds x51
+   ハーツ            Hearts            13   cg.nds x11, arm9.bin x2
+   アルファ・システム      Alfa System        0   
+   スタッフ           Staff              0   
+
+-- company names, UTF-16LE --
+   ナムコ            Namco              6   cg.nds x6
+   バンダイ           Bandai             6   cg.nds x6
+   バンダイナムコ        Bandai Namco       6   cg.nds x6
+   テイルズスタジオ       Tales Studio       0   
+   ウルフチーム         Wolf Team          0   
+   株式会社           K.K. / Inc.        0   
+   テイルズ           Tales              6   cg.nds x6
+   ハーツ            Hearts             6   cg.nds x6
+   アルファ・システム      Alfa System        0   
+   スタッフ           Staff              0   
+
+-- C++ class names --
+   A build with RTTI left on carries demangled class names; one
+   with it off carries none, and that is a fact about the build
+   settings rather than about the studio.  Innocence 2007 has
+   1,047, Vesperia 2008 has 445, Ratatosk 2008 has 0.
+
+   A match is only counted when it is a whole NUL- or
+   whitespace-delimited C string.  Without that, a regular
+   expression run over compressed payload invents thousands:
+   the unrestricted form finds 3,240 CamelCase identifiers on
+   this cartridge and every one of them is inside a compressed
+   or high-entropy buffer.
+
+      22 distinct `A::B` qualified names, whole strings
+        DfJJi::DDXJD                             cg.nds
+        EEC::R_i                                 cg.nds
+        EUh::sZr                                 cg.nds
+        H3F::RKJ                                 cg.nds
+        HA22225::IIIITN                          cg.nds
+        IOUH::IWWWfOFHKOa                        cg.nds
+        LbLJbX::Lt2                              cg.nds
+        OK__bcihbWT_S::_W_                       cg.nds
+        TTTTTWL::IOTTO                           cg.nds
+        Ual::leo                                 cg.nds
+        WWUUKIO::IHA2OWIoWW                      cg.nds
+        ___WT_S::_W_                             cg.nds
+        aXm::dE2                                 cg.nds
+        hqodchB::BJVV                            cg.nds
+        kjc::cr2                                 cg.nds
+        mkJ::JJTJ                                cg.nds
+        qTV::UPT                                 cg.nds
+        std::bad_exception                       arm9.bin
+        std::exception                           arm9.bin
+        std::length_error                        arm9.bin
+        std::logic_error                         arm9.bin
+        tree::insert                             arm9.bin
+    3242 distinct tag-letter CamelCase identifiers, whole strings
+        aAbAKEaE                                 cg.nds
+        aB3DCSU4                                 cg.nds
+        aBBOOJOJO                                cg.nds
+        aBXMRRXX                                 cg.nds
+        aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaB   cg.nds
+        aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaB cg.nds
+        aBaCaDaE                                 cg.nds
+        aBcGBkSV                                 cg.nds
+        aC5MmKOV                                 cg.nds
+        aC777777776o9RRFFk                       cg.nds
+        aCCCLMMLMMMMMLLMMMMMOOZZbbbcccbcbbbcccccccccWWlleebW9C7h cg.nds
+        aCDDCApb                                 cg.nds
+        aCDHFFXI                                 cg.nds
+        aCECCookoo                               cg.nds
+        aCLCLWmn                                 cg.nds
+        aCziDrY0                                 cg.nds
+        aD4DCCC3C3                               cg.nds
+        aDD04AbK                                 cg.nds
+        aDDBB09a                                 cg.nds
+        aDDDdtDdd                                cg.nds
+        aDUE5UWd                                 cg.nds
+        aDecembep                                cg.nds
+        aEBZ5YUH                                 cg.nds
+        aELOKony                                 cg.nds
+        aEfmtagr                                 cg.nds
+        aF4ch80H                                 cg.nds
+        aF55434S2                                cg.nds
+        aFDDFBDFFDDf                             cg.nds
+        aFDDffdFDffDFDF                          cg.nds
+        aFFnLO8r                                 cg.nds
+        aFRYvvwe                                 cg.nds
+        aGBAGInl                                 cg.nds
+        aGD1CD41                                 cg.nds
+        aGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG  cg.nds
+        aGGGGGGGGGGGGGGGaRY                      cg.nds
+        aGPXFD8M                                 cg.nds
+        aHTTSTTH                                 cg.nds
+        aHdHdHdHdHdHdHdHdHdHdHdHdHdHdHdHd        cg.nds
+        aIA9AI9I                                 cg.nds
+        aICBRfKKC                                cg.nds
+        aIXBaZRR                                 cg.nds
+        aIwwwhw7W7                               cg.nds
+        aJZBUooQ                                 cg.nds
+        aJaaasaJ                                 cg.nds
+        aJjefggWWWgg                             cg.nds
+        aK777777772                              cg.nds
+        aKK167721MMVL                            cg.nds
+        aKKSTUWY                                 cg.nds
+        aKLeOOOi                                 cg.nds
+        aLLLMaMe                                 cg.nds
+        aLMcMbbbBZ0                              cg.nds
+        aLQMQNQO                                 cg.nds
+        aMFNNZTqZNNRR                            cg.nds
+        aMLJZPwP                                 cg.nds
+        aMZ22WBW                                 cg.nds
+        aNAJbNBJ                                 cg.nds
+        aNBKJllK                                 cg.nds
+        aNNaLaaY                                 cg.nds
+        aNRRRQefe                                cg.nds
+        aNebbemn                                 cg.nds

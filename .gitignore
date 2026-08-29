@@ -1,0 +1,7 @@
+_work/
+*.nds
+*.zip
+*.sfc
+__pycache__/
+*.pyc
+prompt-*.md

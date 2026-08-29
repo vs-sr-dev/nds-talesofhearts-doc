@@ -1,0 +1,133 @@
+========================================================================
+who made it: every needle, in ASCII, Shift-JIS and UTF-16LE
+========================================================================
+
+34 files, 271287520 bytes
+
+-- company and middleware names, ASCII (case-insensitive) --
+   namco                    6   anime.nds x6
+   bandai                   0   
+   namcobandai              0   
+   namco bandai             0   
+   wolfteam                 0   
+   wolf team                0   
+   tales studio             0   
+   talesstudio              0   
+   alfa system              0   
+   alfasystem               0   
+   ganbarion                0   
+   dimps                    0   
+   telenet                  0   
+   nintendo                 2   anime.nds x1, arm9.bin x1
+   hudson                   0   
+   criware                  3   anime.nds x3
+   cri middleware           0   
+   cri                      1   arm9.bin x1
+   actimagine               2   anime.nds x1, arm9.bin x1
+   mobiclip                 2   anime.nds x1, arm9.bin x1
+   monolith                 0   
+   tri-crescendo            0   
+   tri-ace                  0   
+
+-- company names, Shift-JIS --
+   ナムコ            Namco              0   
+   バンダイ           Bandai             0   
+   バンダイナムコ        Bandai Namco       0   
+   テイルズスタジオ       Tales Studio       0   
+   ウルフチーム         Wolf Team          0   
+   株式会社           K.K. / Inc.        0   
+   テイルズ           Tales             51   anime.nds x51
+   ハーツ            Hearts            13   anime.nds x11, arm9.bin x2
+   アルファ・システム      Alfa System        0   
+   スタッフ           Staff              0   
+
+-- company names, UTF-16LE --
+   ナムコ            Namco              6   anime.nds x6
+   バンダイ           Bandai             6   anime.nds x6
+   バンダイナムコ        Bandai Namco       6   anime.nds x6
+   テイルズスタジオ       Tales Studio       0   
+   ウルフチーム         Wolf Team          0   
+   株式会社           K.K. / Inc.        0   
+   テイルズ           Tales              6   anime.nds x6
+   ハーツ            Hearts             6   anime.nds x6
+   アルファ・システム      Alfa System        0   
+   スタッフ           Staff              0   
+
+-- C++ class names --
+   A build with RTTI left on carries demangled class names; one
+   with it off carries none, and that is a fact about the build
+   settings rather than about the studio.  Innocence 2007 has
+   1,047, Vesperia 2008 has 445, Ratatosk 2008 has 0.
+
+   A match is only counted when it is a whole NUL- or
+   whitespace-delimited C string.  Without that, a regular
+   expression run over compressed payload invents thousands:
+   the unrestricted form finds 3,240 CamelCase identifiers on
+   this cartridge and every one of them is inside a compressed
+   or high-entropy buffer.
+
+       3 distinct `A::B` qualified names, whole strings
+        EEC::R_i                                 anime.nds
+        kjc::cr2                                 anime.nds
+        tree::insert                             arm9.bin
+     797 distinct tag-letter CamelCase identifiers, whole strings
+        aAbAKEaE                                 anime.nds
+        aEfmtagr                                 anime.nds
+        aF4ch80H                                 anime.nds
+        aGBAGInl                                 anime.nds
+        aGD1CD41                                 anime.nds
+        aGPXFD8M                                 anime.nds
+        aIXBaZRR                                 anime.nds
+        aJZBUooQ                                 anime.nds
+        aJaaasaJ                                 anime.nds
+        aNAJbNBJ                                 anime.nds
+        aONNOKOK                                 anime.nds
+        aPeLKPPO                                 anime.nds
+        aPosssvv2vv                              anime.nds
+        aQNNGRLB                                 anime.nds
+        aRRAZkww                                 anime.nds
+        aRRRGYGR                                 anime.nds
+        aSES8888                                 anime.nds
+        aTTUUaZR                                 anime.nds
+        aTXYTVKE                                 anime.nds
+        aUUUULUI                                 anime.nds
+        aUUWIWSS                                 anime.nds
+        aVIpWYxz                                 anime.nds
+        aWILLLMR                                 anime.nds
+        aWKJHKK8                                 anime.nds
+        aWSDZOVM                                 anime.nds
+        aXGaaaKc                                 anime.nds
+        aYAaAAYA                                 anime.nds
+        aYbcZbYbzY                               anime.nds
+        aYujjRrr                                 anime.nds
+        aZYaaaYF                                 anime.nds
+        aZsahdhh                                 anime.nds
+        bAbBbCba                                 anime.nds
+        bCCDTbbc                                 anime.nds
+        bCCQkKbK                                 anime.nds
+        bGJKHJdG                                 anime.nds
+        bGtvB7du                                 anime.nds
+        bH4jbjqk2kc                              anime.nds
+        bMBBTK0Z                                 anime.nds
+        bMJXSGAH                                 anime.nds
+        bO88YQQH                                 anime.nds
+        bODLVsk9                                 anime.nds
+        bOOICCCB                                 anime.nds
+        bORPROR5                                 anime.nds
+        bObZbbfb                                 anime.nds
+        bPUbSOPP                                 anime.nds
+        bPbaPPab                                 anime.nds
+        bPcPdPeP                                 anime.nds
+        bREWWWVRaV                               anime.nds
+        bRRR9ScH                                 anime.nds
+        bTIODiOJ                                 anime.nds
+        bTuWFTET                                 anime.nds
+        bUfVffff                                 anime.nds
+        bXKDEEY8                                 anime.nds
+        bXXRXXmt                                 anime.nds
+        bXXVTgigDg                               anime.nds
+        bYFCEaoo                                 anime.nds
+        bYUYabcb                                 anime.nds
+        bZZgZbyi                                 anime.nds
+        cAvFsIsAva                               anime.nds
+        cB5UdA3T                                 anime.nds

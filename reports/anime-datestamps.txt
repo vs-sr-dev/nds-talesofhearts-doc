@@ -1,0 +1,103 @@
+== C __DATE__ __TIME__: 0 hits, 0 distinct ==
+
+== ISO date: 0 hits, 0 distinct ==
+
+== build string: 2 hits, 2 distinct ==
+  Ver.0.83                                                   x1     0x00062741  arm9.bin+0x5E741
+  Build:A                                                    x1     0x0006274A  arm9.bin+0x5E74A
+
+== eight-digit date groups in names ==
+  none
+
+== six-digit yymmdd groups in names, 2004-2009 ==
+  040601  x1     0x001944E3  outside the file system
+  040602  x1     0x001944EB  outside the file system
+  040603  x1     0x001944F3  outside the file system
+  040604  x1     0x001944FB  outside the file system
+  040605  x1     0x00194503  outside the file system
+  040606  x1     0x0019450B  outside the file system
+  040607  x1     0x00194513  outside the file system
+  040608  x1     0x0019451B  outside the file system
+  040609  x1     0x00194523  outside the file system
+  040610  x1     0x0019452B  outside the file system
+  040611  x1     0x00194533  outside the file system
+  040612  x1     0x0019453B  outside the file system
+  040613  x1     0x00194543  outside the file system
+  040614  x1     0x0019454B  outside the file system
+  040615  x1     0x00194553  outside the file system
+  040616  x1     0x0019455B  outside the file system
+  040617  x1     0x00194563  outside the file system
+  040618  x1     0x0019456B  outside the file system
+  040619  x1     0x00194573  outside the file system
+  040620  x1     0x0019457B  outside the file system
+  040621  x1     0x00194583  outside the file system
+  040622  x1     0x0019458B  outside the file system
+  040623  x1     0x00194593  outside the file system
+  040624  x1     0x0019459B  outside the file system
+  040625  x1     0x001945A3  outside the file system
+  040626  x1     0x001945AB  outside the file system
+  040627  x1     0x001945B3  outside the file system
+  040628  x1     0x001945BB  outside the file system
+  040629  x1     0x001945C3  outside the file system
+  040630  x1     0x001945CB  outside the file system
+  040631  x1     0x001945D3  outside the file system
+  040801  x1     0x001945FB  outside the file system
+  040802  x1     0x00194603  outside the file system
+  040803  x1     0x0019460B  outside the file system
+  040804  x1     0x00194613  outside the file system
+  040805  x1     0x0019461B  outside the file system
+  040806  x1     0x00194623  outside the file system
+  040807  x1     0x0019462B  outside the file system
+  040808  x1     0x00194633  outside the file system
+  040809  x1     0x0019463B  outside the file system
+  040810  x1     0x00194643  outside the file system
+  040811  x1     0x0019464B  outside the file system
+  040812  x1     0x00194653  outside the file system
+  040813  x1     0x0019465B  outside the file system
+  040814  x1     0x00194663  outside the file system
+  040815  x1     0x0019466B  outside the file system
+  040816  x1     0x00194673  outside the file system
+  040817  x1     0x0019467B  outside the file system
+  040818  x1     0x00194683  outside the file system
+  040819  x1     0x0019468B  outside the file system
+  040820  x1     0x00194693  outside the file system
+  040821  x1     0x0019469B  outside the file system
+  040822  x1     0x001946A3  outside the file system
+  040823  x1     0x001946AB  outside the file system
+  040824  x1     0x001946B3  outside the file system
+  040825  x1     0x001946BB  outside the file system
+  040826  x1     0x001946C3  outside the file system
+  040827  x1     0x001946CB  outside the file system
+  040828  x1     0x001946D3  outside the file system
+  040829  x1     0x001946DB  outside the file system
+  367 distinct groups
+========================================================================
+the same patterns over the BLZ plaintext in _work/mod_anime
+========================================================================
+
+== C __DATE__ __TIME__: 9 hits over 33 modules ==
+  arm9         +0x0A0DC4  Aug 26 2008 16:33:56
+  arm9         +0x0A0E32  Aug 26 2008 16:33:58
+  arm9         +0x0A0E77  Aug 26 2008 16:34:00
+  arm9         +0x0A0F96  Aug 26 2008 16:34:03
+  arm9         +0x0A9305  Aug 26 2008 16:33:59
+  arm9         +0x0A967F  Aug 26 2008 16:34:00
+  arm9         +0x0AABC6  Aug 26 2008 16:34:02
+  arm9         +0x0AB048  Aug 26 2008 16:34:02
+  ovl9_001     +0x08DFF4  Nov 19 2008
+
+== ISO date: 0 hits over 33 modules ==
+
+== build string: 10 hits over 33 modules ==
+  arm9         +0x0A0DA9  ADXT/NITRO Ver.10.62 Build:Aug 26 2008 16:33:56
+  arm9         +0x0A0E15  NITROCI/NITRO Ver.1.04 Build:Aug 26 2008 16:33:58
+  arm9         +0x0A0E59  NITRORNA/NITRO Ver.1.06 Build:Aug 26 2008 16:34:00
+  arm9         +0x0A0F75  CRI CRW:STD/NITRO Ver.0.83 Build:Aug 26 2008 16:34:03
+  arm9         +0x0A9291  ADXNITROSDK Ver.
+  arm9         +0x0A92ED  ADXNITRO Ver.1.07 Build:Aug 26 2008 16:33:59
+  arm9         +0x0A9665  MFCI/NITRO Ver.1.23 Build:Aug 26 2008 16:34:00
+  arm9         +0x0AABAD  AHX/NITRO Ver.1.85 Build:Aug 26 2008 16:34:02
+  arm9         +0x0AB02D  ADXCS/NITRO Ver.1.25 Build:Aug 26 2008 16:34:02
+  ovl9_000     +0x023052  `ED Ver.
+
+19 stamps in the plaintext, against what the packed image showed above.

@@ -1,0 +1,132 @@
+=== 1. whole payloads, by SHA-1
+this disc      47,195 payloads, 28,679 distinct, 376,083,362 bytes
+cg.nds         47,195 payloads, 28,679 distinct, 376,083,366 bytes -- byte-identical: 28,662
+      shared names, basename and case-folded: 24,784 of 29,778 against 29,778
+      names on one side only: 9,988
+         [gap 0x6b72734]
+         [gap 0x6bb8634]
+         [gap 0x6d1970c]
+         [gap 0x6d5f01c]
+         [gap 0x6db18]
+         [gap 0x6db1c]
+         [gap 0x72e5e5c]
+         [gap 0x7306750]
+         [gap 0x7423ccc]
+         [gap 0x756797c]
+         [gap 0x7573814]
+         [gap 0x76c8c3c]
+         [gap 0x77771c8]
+         [gap 0x78390e0]
+         [gap 0x7923978]
+         [gap 0x79fcf8c]
+         [gap 0x7ae3e1c]
+         [gap 0x7cddac8]
+         [gap 0x7cddc26]
+         [gap 0x7ce2b37]
+         [gap 0x7ce8d2c]
+         [gap 0x7ced2fa]
+         [gap 0x7cf6dd3]
+         [gap 0x7cfda24]
+         [gap 0x7d0b925]
+         [gap 0x7d10ee3]
+         [gap 0x7d16acc]
+         [gap 0x7d1ac19]
+         [gap 0x7d1fe37]
+         [gap 0x7d254c8]
+         [gap 0x7d2e9b8]
+         [gap 0x7d31c44]
+         [gap 0x7d33129]
+         [gap 0x7d3a50f]
+         [gap 0x7d3f9c8]
+         [gap 0x7d43d03]
+         [gap 0x7d4aa54]
+         [gap 0x7d4e31d]
+         [gap 0x7d5611e]
+         [gap 0x7d5c2d6]
+      payloads on this side only: 17 of 28,679
+         /movie/MOV000_A.mods
+         /movie/MOV000_B.mods
+         /movie/MOV001.mods
+         /movie/MOV002.mods
+         /movie/MOV003.mods
+         /movie/MOV004.mods
+         /movie/MOV005.mods
+         /movie/MOV006.mods
+         /movie/MOV007.mods
+         /movie/memo.txt
+         [FAT]
+         [ROM header 0x0]
+         [banner]
+         [gap 0x6DB1C]
+         [header slack 0x200]
+         [module arm9, BLZ plaintext]
+         [tail 0xEE372A4]
+
+=== 2. the compressor's preamble, position by position
+A column with one distinct value is a constant the compressor
+writes; a column with 256 is random.  For the block codec the
+window starts at +9, which is the first byte of the stream and
+therefore the first control byte, not the header.
+
+  XCompress streams, from +0: 0 payloads
+  OFFSET DISTINCT  MOST COMMON VALUE
+
+  codec block streams, from +9: 0 payloads
+  OFFSET DISTINCT  MOST COMMON VALUE
+
+  the 2003 GameCube and 2008 Wii figure, for comparison:
+  +8..+11 are 5b 80 80 8d in 2,051 of 2,051 MSCF payloads, with
+  the four bytes in front of them uniformly random.
+
+=== 3. the cast and the project tags, in this disc's own names
+NEEDLE      NAMES  THE NAMES THEMSELVES
+rutee           0  
+stahn           0  
+dimlos          0  
+cress           0  
+reid            0  
+veigue          0  
+senel           0  
+luke            0  
+emil            0  
+marta           0  
+richter         0  
+lloyd           0  
+colette         0  
+genis           0  
+zelos           0  
+yuri            0  
+estelle         0  
+karol           0  
+repede          0  
+judith          0  
+flynn           0  
+rita            0  
+shing         131  face_shing_1.ncbr, face_shing_2.ncbr, link_shing.dat [fps4 header+table], link_shing.nclr, link_shing_1.ncbr, link_shing_2.ncbr, sepia_shing.ds3 [v154 header], shing.dat [fps4 header+table]
+kohaku        112  face_kohaku_1.ncbr, face_kohaku_2.ncbr, kohaku.dat [fps4 header+table], kohaku.nclr, kohaku00.ds3 [v154 header], kohaku00_01.ds3 [v154 header], kohaku00_e000.ds3 [v154 header], kohaku00_e011.ds3 [v154 header]
+hisui          92  face_hisui_1.ncbr, face_hisui_2.ncbr, hisui.dat [fps4 header+table], hisui.nclr, hisui00.ds3 [v154 header], hisui00_01.ds3 [v154 header], hisui00_e000.ds3 [v154 header], hisui00_e011.ds3 [v154 header]
+beryl          88  beryl.dat [fps4 header+table], beryl.nclr, beryl00.ds3 [v154 header], beryl00_01.ds3 [v154 header], beryl00_e000.ds3 [v154 header], beryl00_e011.ds3 [v154 header], beryl00_e012.ds3 [v154 header], beryl00_e013.ds3 [v154 header]
+innes          91  face_innes_1.ncbr, face_innes_2.ncbr, innes.dat [fps4 header+table], innes.nclr, innes00.ds3 [v154 header], innes00_01.ds3 [v154 header], innes00_e000.ds3 [v154 header], innes00_e011.ds3 [v154 header]
+kunzite        76  face_kunzite_1.ncbr, face_kunzite_2.ncbr, kunzite.dat [fps4 header+table], kunzite.nclr, kunzite00.ds3 [v154 header], kunzite00_01.ds3 [v154 header], kunzite00_e000.ds3 [v154 header], kunzite00_e011.ds3 [v154 header]
+chalcedony      1  sepia_chalcedony.ds3 [v154 header]
+lithia          0  
+incarose        0  
+
+top2            0  
+to7             0  
+to8             0  
+to9           107  bal_obs_000.to9moh, bal_obs_001.to9moh, bal_obs_002.to9moh, cam_ten_000.to9moh, cam_wod_000.to9moh, cam_wod_001.to9moh, cas_enm_000.to9moh, cav_stm_000.to9moh
+tods           21  ctods3_accessoryshopdata.bin, ctods3_curestoneshopdata.bin, ctods3_materialshopdata.bin, ctods3_toolshopdata.bin, tods3_btlmemodata.dat, tods3_curestonedata.dat, tods3_linkcounterdata.dat, tods3_outlinedata.dat
+tor             8  menu_sormahistory.cc <lz11>, menu_sormahistory.cc [lz11 header], menu_sormahistory.pp <lz11>, menu_sormahistory.pp [lz11 header], menu_sormahistory.ss <lz11>, menu_sormahistory.ss [lz11 header], menu_sormahistorysub.ss <lz11>, menu_sormahistorysub.ss [lz11 header]
+tol             0  
+tos             0  
+t8bt            0  
+nt_ds1          0  
+ezbind          0  
+mscf            0  
+fps4        2,361  #0 [fps4 header+table], #1 [fps4 header+table], #10 [fps4 header+table], #100 [fps4 header+table], #101 [fps4 header+table], #102 [fps4 header+table], #103 [fps4 header+table], #104 [fps4 header+table]
+v154        1,508  alec.ds3 [v154 header], alec_e020.ds3 [v154 header], amu_g_00.ds3 [v154 header], amu_m_00.ds3 [v154 header], amu_m_00_e017.ds3 [v154 header], amu_m_00_e054.ds3 [v154 header], amu_m_01.ds3 [v154 header], amu_p_00.ds3 [v154 header]
+
+   denominator: 29,778 distinct member names
+   Ratatosk's own figure: 0 of 734 MSCF member names shared with
+   2003, and 0 of 71,353 internal names from any other title.

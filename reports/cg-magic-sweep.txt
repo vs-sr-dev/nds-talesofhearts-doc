@@ -1,0 +1,146 @@
+image cg.nds, 268,435,456 bytes
+a four-byte needle has a chance rate of 0.06 on this medium;
+a single hit is therefore not evidence and a zero is weak.
+This is the largest medium the corpus has opened, so the inversion
+section 7 describes is more marked here than anywhere before it.
+
+=== the corpus
+NEEDLE                   HITS   EXPECTED  WHAT IT WOULD MEAN
+'CPS '                      0     0.0625  Legendia 2005, the sixteen-byte envelope
+'CPS\x00'                   4     0.0625  Legendia 2005, other spelling
+'TLPS'                      0     0.0625  Tales container tag
+'TLPK'                      0     0.0625  Tales container tag
+'AFS\x00'                   1     0.0625  CRI AFS archive
+'SCPK'                      2     0.0625  Destiny 2 2002 bundle
+'THEIRSCE'                  0     <0.001  Tales script container
+'FILE.FPB'                  0     <0.001  Destiny 2 2002 archive name
+'FPS2'                      0     0.0625  Rebirth / Abyss archive
+'FPS3'                      0     0.0625  Rebirth / Abyss archive
+'FPS4'                  2,493     0.0625  Tales archive, later builds
+'MSCF'                      0     0.0625  the studio's own envelope, 2003 and here
+'CVMH'                      1     0.0625  CRI CVM volume header
+'ROFSBLD'                   0     <0.001  CRI ROFS builder stamp
+'SAMPLE_GAME_TITLE'         0     <0.001  CRI builder default title
+'TO7'                       8         16  Abyss project tag
+'TO8'                      10         16  project tag, next in the series
+'ToR'                      10         16  Rebirth project tag
+'ToL'                       8         16  Legendia project tag
+'tox'                       7         16  Legendia project directory
+'tor_'                      4     0.0625  Rebirth effect prefix, found on the Abyss disc
+'no_se_'                    0     <0.001  Rebirth sound-effect prefix
+'stan'                      0     0.0625  Tempest 2006 name, raised and unresolved
+'dimlos'                    0     <0.001  Tempest 2006 name, raised and unresolved
+'EZBIND'                    0     <0.001  Innocence 2007 archive
+'NT_DS1'                    0     <0.001  Tempest 2006 project tag
+'To9'                      14         16  the next project number after Vesperia
+'TO9'                     115         16  the same, upper case
+'TODS'                     28     0.0625  the DS project tag on the 2008 cartridges
+'TODS3'                    20     <0.001  the same, with its number
+'CTODS3'                    6     <0.001  the same, item-table spelling
+'V154'                  1,700     0.0625  the second container on the 2008 cartridges
+'MODS'                      9     0.0625  Actimagine Mobiclip video
+'VXDS'                      0     0.0625  Actimagine VX video, the 2006 cartridge
+'MOC5'                      0     0.0625  Actimagine Mobiclip, other spelling
+'SDAT'                      1     0.0625  the NitroSDK sound archive
+'BLZ\x00'                   0     0.0625  the Nintendo linker backwards LZ, as a string
+'(c)CRI'                8,912     <0.001  CRI copyright, stamped in ADX and AHX headers
+'CRI '                      0     0.0625  CRI middleware
+'shing'                    74     <0.001  Hearts 2008, the male lead
+'kohaku'                  161     <0.001  Hearts 2008, the female lead
+'beryl'                   212     <0.001  Hearts 2008, party
+'hisui'                   234     <0.001  Hearts 2008, party
+'innes'                   205     <0.001  Hearts 2008, party
+'kunzite'                  13     <0.001  Hearts 2008, party
+'yuri'                      0     0.0625  Vesperia 2008, the male lead
+'estelle'                   0     <0.001  Vesperia 2008
+'karol'                     0     <0.001  Vesperia 2008
+'rita'                      0     0.0625  Vesperia 2008
+'raven'                     0     <0.001  Vesperia 2008
+'judith'                    0     <0.001  Vesperia 2008
+'flynn'                     0     <0.001  Vesperia 2008
+'repede'                    0     <0.001  Vesperia 2008
+'YUR'                      36         16  Vesperia 2008, the three-letter form its assets use
+'EST'                      93         16  Vesperia 2008, three-letter form
+'KAR'                      11         16  Vesperia 2008, three-letter form
+'luke'                      1     0.0625  Abyss 2005
+'emil'                      0     0.0625  Ratatosk 2008
+'marta'                     0     <0.001  Ratatosk 2008
+'lloyd'                     0     <0.001  Symphonia 2003
+'veigue'                    0     <0.001  Rebirth 2004
+'senel'                     0     <0.001  Legendia 2005
+'reid'                      0     0.0625  Eternia 2000
+'cress'                     0     <0.001  Phantasia 1995
+
+=== the 2003 GameCube prequel
+NEEDLE                   HITS   EXPECTED  WHAT IT WOULD MEAN
+'top2'                      0     0.0625  the 2003 project name, from `top2.c`
+'Top2'                      0     0.0625  the 2003 relocatable modules
+'_custom'                   0     <0.001  the one team-named map that shipped in 2003
+'rutee'                     0     <0.001  the 2003 disc, a character from Tales of Destiny
+'tod2_cut'                  0     <0.001  the 2003 movie table, named after Destiny 2
+'HVQM4'                     0     <0.001  Hudson's video codec, the 2003 disc's
+'.h4m'                      0     0.0625  the 2003 movie extension
+'testfield'                 0     <0.001  the 2003 test maps
+'BTLenemy'                  0     <0.001  the 2003 file that held 251 codec blocks
+'ToSM'                      0     0.0625  this build's own sound-archive tag
+'TOSM'                      0     0.0625  this build's own sound-archive tag, upper case
+'RT4J'                      0     0.0625  this game id
+
+=== middleware
+NEEDLE                   HITS   EXPECTED  WHAT IT WOULD MEAN
+'CRID'                      0     0.0625  CRI Sofdec 2
+'@UTF'                      0     0.0625  CRI table format
+'ADXF'                      0     0.0625  CRI ADX
+'AHXF'                      0     0.0625  CRI AHX
+'Sofdec'                    0     <0.001  CRI video
+'CRI '                      0     0.0625  CRI Middleware
+'criware'                   0     <0.001  CRI Middleware
+'VXDS'                      0     0.0625  Actimagine VX
+'MODS'                      9     0.0625  Actimagine Mobiclip
+'Bink'                      0     0.0625  RAD Game Tools Bink
+'Miles'                     0     <0.001  RAD Game Tools Miles
+'Havok'                     0     <0.001  Havok physics
+'Granny'                    0     <0.001  RAD Granny
+'FMOD'                      0     0.0625  Firelight FMOD
+'zlib'                      0     0.0625  zlib
+'inflate'                   0     <0.001  zlib
+'PK\x03\x04'                2     0.0625  zip local header
+'\x1f\x8b\x08'             24         16  gzip
+
+=== what this platform supplies
+NEEDLE                   HITS   EXPECTED  WHAT IT WOULD MEAN
+'\x0f\xf5\x12\xee'          0     0.0625  XCompress stream magic (XDK LZX)
+'XCompress'                 0     <0.001  the XDK compression library, by name
+'XMemCompress'              0     <0.001  the XDK compression entry point
+'0&\xb2u'                   0     0.0625  ASF / Windows Media header GUID
+'WAVEXMA2'                  0     <0.001  XMA2 audio in a RIFF WAVE
+'XUIZ'                      0     0.0625  XUI, the XDK user-interface package
+'XDBF'                      0     0.0625  the title metadata database
+'XEX2'                      0     0.0625  an Xbox 360 executable
+'SLZ'                      12         16  the tri-Ace wrapper around XCompress
+'Aska'                      0     0.0625  tri-Ace's engine namespace
+'ASKA'                      0     0.0625  tri-Ace's engine namespace, upper case
+'.cpp'                      0     0.0625  a source path left in the image
+'\\Release'                 0     <0.001  a Windows build path
+'../Release/'               0     <0.001  a POSIX-style build path
+
+=== the cast of every title in the corpus
+NEEDLE                   HITS   EXPECTED  WHAT IT WOULD MEAN
+'rutee'                     0     <0.001  Destiny 1997 / Symphonia 2003
+'stahn'                     0     <0.001  Destiny 1997
+'dimlos'                    0     <0.001  Destiny 1997
+'cress'                     0     <0.001  Phantasia 1995
+'reid'                      0     0.0625  Eternia 2000
+'veigue'                    0     <0.001  Rebirth 2004
+'senel'                     0     <0.001  Legendia 2005
+'luke'                      1     0.0625  Abyss 2005
+'emil'                      0     0.0625  Ratatosk 2008, six weeks earlier
+'marta'                     0     <0.001  Ratatosk 2008, six weeks earlier
+'richter'                   0     <0.001  Ratatosk 2008, six weeks earlier
+'lloyd'                     0     <0.001  Symphonia 2003 and Ratatosk 2008
+'yuri'                      0     0.0625  this game
+'estelle'                   0     <0.001  this game
+'karol'                     0     <0.001  this game
+'repede'                    0     <0.001  this game
+'judith'                    0     <0.001  this game
+'flynn'                     0     <0.001  this game

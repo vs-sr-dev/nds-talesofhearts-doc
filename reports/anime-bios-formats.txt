@@ -1,0 +1,22 @@
+btl/common/face_LZ.bin                            4854  LZ77      ->     11084
+m/hsr.bin                                         4583  LZ77      ->      9272
+title/Menu_Event.NCGR_lz                         26983  LZ11      ->     24640
+title/Menu_Event.NCLR_lz                           547  LZ11      ->       600
+title/Menu_Event.NSCR_lz                          1772  LZ11      ->      2084
+title/TITLE_LOGO_NAMCO.NCGR_lz                     738  LZ11      ->     12352
+title/TITLE_LOGO_NAMCO.NCLR_lz                      90  LZ11      ->        90
+title/TITLE_LOGO_NAMCO.NSCR_lz                     247  LZ11      ->      2084
+title/game_over.NCGR_lz                          26047  LZ11      ->     49216
+title/game_over.NCLR_lz                            520  LZ11      ->       570
+title/game_over.NSCR_lz                           1759  LZ11      ->      1572
+# 11 of 5145 files begin with a BIOS-format stream that decodes
+# and consumes the whole file
+#   LZ11          9 files        58703 ->       93208  1.59x
+#   LZ77          2 files         9437 ->       20356  2.16x
+#   TOTAL        11 files        68140 ->      113564  1.67x
+#
+# for comparison, files whose first byte is a BIOS type byte and
+# whose next three are a non-zero size -- the header shape alone,
+# which for the permissive formats is all a census can measure:
+#   0x10 LZ77          5 files
+#   0x11 LZ11         10 files   (permissive: any byte sequence decodes)

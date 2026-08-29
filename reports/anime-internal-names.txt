@@ -1,0 +1,245 @@
+=== coverage
+payloads read            47,195
+bytes read               376,083,362
+bytes actually searched  376,083,362
+distinct names harvested 56,324
+
+=== the sixty commonest name prefixes
+   SEL                        1108
+   a                           527
+   pol                         463
+   NAVI                        347
+   MENU                        310
+   DDD                         299
+   MAG                         294
+   wha                         276
+   btl                         265
+   isl                         261
+   BNK                         254
+   tem                         220
+   UUU                         216
+   fff                         204
+   GRP                         195
+   SQA                         192
+   mp                          184
+   www                         182
+   sno                         179
+   tex                         176
+   bt                          163
+   DEB                         162
+   kabe                        155
+   ep0107                      151
+   WHA                         145
+   Menu                        143
+   SSS                         139
+   QQQ                         134
+   TEX                         131
+   AAA                         120
+   sss                         116
+   CDD                         114
+   BBB                         108
+   ISL                         107
+   RED                         106
+   WWW                         106
+   SNO                         106
+   kusa                        105
+   MMM                         101
+   SHING00                     101
+   FC0                         100
+   E001                         98
+   KAG                          96
+   snof                         95
+   ccc                          94
+   PPP                          94
+   M                            94
+   XXX                          92
+   III                          91
+   aaa                          90
+   var                          89
+   FC1                          88
+   eee                          87
+   TTT                          86
+   VVV                          85
+   xxx                          84
+   KKK                          84
+   qqq                          84
+   Mat                          84
+   FFF                          83
+
+=== named searches
+rutee          0 distinct names contain it
+stan           7 distinct names contain it
+      STAN.NCLR  x1
+      STAN_1.NCBR  x1
+      STAN_2.NCBR  x1
+      STAN_3.NCBR  x1
+      STAN_4.NCBR  x1
+      STAN_5.NCBR  x1
+      STAN_6.NCBR  x1
+dimlos         0 distinct names contain it
+cress          0 distinct names contain it
+reid           0 distinct names contain it
+veigue         0 distinct names contain it
+senel          0 distinct names contain it
+luke           0 distinct names contain it
+emil           0 distinct names contain it
+marta          0 distinct names contain it
+lloyd          0 distinct names contain it
+yuri           0 distinct names contain it
+estelle        0 distinct names contain it
+karol          0 distinct names contain it
+rita           0 distinct names contain it
+raven          0 distinct names contain it
+judith         0 distinct names contain it
+flynn          0 distinct names contain it
+repede         0 distinct names contain it
+shing          194 distinct names contain it
+      Ashing00_e016  x1
+      FACE_SHING_1.NCBR  x1
+      FACE_SHING_2.NCBR  x1
+      LINK_SHING.NCLR  x1
+      LINK_SHING_1.NCBR  x1
+      LINK_SHING_2.NCBR  x1
+      Link_SHING.dat  x1
+      SHING.NCLR  x1
+      SHING.dat  x1
+      SHING00.DS3  x1
+      SHING00_01.DS3  x1
+      SHING00_E000.DS3  x1
+      SHING00_E001.DS3  x1
+      SHING00_E002.DS3  x1
+      SHING00_E003.DS3  x1
+      SHING00_E005.DS3  x1
+      SHING00_E008.DS3  x1
+      SHING00_E009.DS3  x1
+      SHING00_E010.DS3  x1
+      SHING00_E011.DS3  x1
+      SHING00_E012.DS3  x1
+      SHING00_E013.DS3  x1
+      SHING00_E014.DS3  x1
+      SHING00_E015.DS3  x1
+kohaku         159 distinct names contain it
+      FACE_KOHAKU_1.NCBR  x1
+      FACE_KOHAKU_2.NCBR  x1
+      KOHAKU.NCLR  x2
+      KOHAKU.dat  x1
+      KOHAKU00.DS3  x1
+      KOHAKU00_01.DS3  x1
+      KOHAKU00_E000.DS3  x1
+      KOHAKU00_E011.DS3  x1
+      KOHAKU00_E012.DS3  x1
+      KOHAKU00_E013.DS3  x1
+      KOHAKU00_E014.DS3  x1
+      KOHAKU00_E016.DS3  x1
+      KOHAKU00_E017.DS3  x1
+      KOHAKU00_E018.DS3  x1
+      KOHAKU00_E019.DS3  x1
+      KOHAKU00_E020.DS3  x1
+      KOHAKU00_E021.DS3  x1
+      KOHAKU00_E022.DS3  x1
+      KOHAKU00_E023.DS3  x1
+      KOHAKU00_E024.DS3  x1
+      KOHAKU00_E025.DS3  x1
+      KOHAKU00_E026.DS3  x1
+      KOHAKU00_E027.DS3  x1
+      KOHAKU00_E028.DS3  x1
+hisui          131 distinct names contain it
+      FACE_HISUI_1.NCBR  x1
+      FACE_HISUI_2.NCBR  x1
+      HISUI.NCLR  x1
+      HISUI.dat  x1
+      HISUI00.DS3  x1
+      HISUI00_01.DS3  x1
+      HISUI00_E000.DS3  x1
+      HISUI00_E011.DS3  x1
+      HISUI00_E012.DS3  x1
+      HISUI00_E013.DS3  x1
+      HISUI00_E014.DS3  x1
+      HISUI00_E015.DS3  x1
+      HISUI00_E016.DS3  x1
+      HISUI00_E017.DS3  x1
+      HISUI00_E018.DS3  x1
+      HISUI00_E019.DS3  x1
+      HISUI00_E020.DS3  x1
+      HISUI00_E021.DS3  x1
+      HISUI00_E022.DS3  x1
+      HISUI00_E023.DS3  x1
+      HISUI00_E024.DS3  x1
+      HISUI00_E025.DS3  x1
+      HISUI00_E026.DS3  x1
+      HISUI00_E027.DS3  x1
+beryl          129 distinct names contain it
+      BERYL.NCLR  x1
+      BERYL.dat  x1
+      BERYL00.DS3  x1
+      BERYL00_01.DS3  x1
+      BERYL00_E000.DS3  x1
+      BERYL00_E011.DS3  x1
+      BERYL00_E012.DS3  x1
+      BERYL00_E013.DS3  x1
+      BERYL00_E014.DS3  x1
+      BERYL00_E015.DS3  x1
+      BERYL00_E016.DS3  x1
+      BERYL00_E017.DS3  x1
+      BERYL00_E018.DS3  x1
+      BERYL00_E019.DS3  x1
+      BERYL00_E020.DS3  x1
+      BERYL00_E021.DS3  x1
+      BERYL00_E022.DS3  x1
+      BERYL00_E023.DS3  x1
+      BERYL00_E024.DS3  x1
+      BERYL00_E026.DS3  x1
+      BERYL00_E027.DS3  x1
+      BERYL00_E028.DS3  x1
+      BERYL00_E030.DS3  x1
+      BERYL00_E031.DS3  x1
+innes          125 distinct names contain it
+      FACE_INNES_1.NCBR  x1
+      FACE_INNES_2.NCBR  x1
+      INNES.NCLR  x1
+      INNES.dat  x1
+      INNES00.DS3  x1
+      INNES00_01.DS3  x1
+      INNES00_E000.DS3  x1
+      INNES00_E011.DS3  x1
+      INNES00_E012.DS3  x1
+      INNES00_E013.DS3  x1
+      INNES00_E014.DS3  x1
+      INNES00_E015.DS3  x1
+      INNES00_E016.DS3  x1
+      INNES00_E017.DS3  x1
+      INNES00_E018.DS3  x1
+      INNES00_E019.DS3  x1
+      INNES00_E020.DS3  x1
+      INNES00_E021.DS3  x1
+      INNES00_E022.DS3  x1
+      INNES00_E023.DS3  x1
+      INNES00_E024.DS3  x1
+      INNES00_E025.DS3  x1
+      INNES00_E026.DS3  x1
+      INNES00_E027.DS3  x1
+kunzite        105 distinct names contain it
+      FACE_KUNZITE_1.NCBR  x1
+      FACE_KUNZITE_2.NCBR  x1
+      KUNZITE.NCLR  x1
+      KUNZITE.dat  x1
+      KUNZITE00.DS3  x1
+      KUNZITE00_01.DS3  x1
+      KUNZITE00_E000.DS3  x1
+      KUNZITE00_E011.DS3  x1
+      KUNZITE00_E012.DS3  x1
+      KUNZITE00_E013.DS3  x1
+      KUNZITE00_E014.DS3  x1
+      KUNZITE00_E015.DS3  x1
+      KUNZITE00_E016.DS3  x1
+      KUNZITE00_E017.DS3  x1
+      KUNZITE00_E018.DS3  x1
+      KUNZITE00_E019.DS3  x1
+      KUNZITE00_E020.DS3  x1
+      KUNZITE00_E021.DS3  x1
+      KUNZITE00_E022.DS3  x1
+      KUNZITE00_E023.DS3  x1
+      KUNZITE00_E024.DS3  x1
+      KUNZITE00_E025.DS3  x1
+      KUNZITE00_E026.DS3  x1
+      KUNZITE00_E027.DS3  x1

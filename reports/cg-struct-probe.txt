@@ -1,0 +1,73 @@
+struct_probe.py -- detector self-test
+
+Each fingerprint is hand-assembled and fed to the detector that
+looks for it.  This shows the detectors work.  It does NOT show
+that an ARM compiler would spell a real decoder this way, and no
+ARM build containing this codec is known to exist to check against.
+
+  refill `orr rX,rX,#0xFF00` and `orr rX,rY,#0xFF00`   found 2 of 2  OK
+  mask `lsl #20` then `lsr #20`                        found 1 of 1  OK
+  mask as a literal-pool 4095                          found 1 of 1  OK
+  ring on the stack, `sub sp,sp,#4096`                 found 1 of 1  OK
+  nibble split, `and #15` near `lsr #4`                found 1 of 1  OK
+  run escape, ARM `add #3` and `add #19`               found 2 of 2  OK
+  run escape, THUMB `add #3` and `add #19`             found 2 of 2  OK
+
+7 of 7 detectors fire on a hand-assembled positive.
+
+# structural probe over 33 modules in _work/mod_cg
+#
+# refill  = `orr rX,rY,#0xFF00`, either spelling (the Xbox 360
+#           revision: the destination need not be the source)
+# mask    = `lsl #20` then `lsr #20`, ARM or THUMB
+# 4095    = a literal-pool 4095, the other form of the mask
+# ring    = add/sub on sp with a 4096..4400 immediate
+# nibble  = `and #15` within eight instructions of an `lsr #4`
+# escape  = an `add #19` within 200 instructions of an `add #3`
+# cluster = three or more distinct fingerprints inside 200 instructions
+
+module           words   ARM dp  refill   mask  4095  ring  nibble  add19  escape clusters
+------------------------------------------------------------------------------------------
+arm7             39882    11911       0      0     4     0       0      0       0        0
+arm9            186366    45104       8      2    19     0       3     10       9        0
+ovl9_000         74536    14202       0      0     0     0       0      0       0        0
+ovl9_001        146040    43234       0      0     1     0       0      9       1        0
+ovl9_002          1064      326       0      0     0     0       0      0       0        0
+ovl9_003         98200    28953       0      0     4     8       0      1       0        0
+ovl9_004             8        0       0      0     0     0       0      0       0        0
+ovl9_005          3816     1233       0      0     0     0       0      0       0        0
+ovl9_006         12048     4215       0      0     0     0       0      3       1        0
+ovl9_007          6048     2349       0      0     0     0       0      2       0        0
+ovl9_008          9552     3543       0      0     0     0       0      4       0        0
+ovl9_009          8904     3395       0      0     0     0       0      5       0        0
+ovl9_010          4184     1478       0      0     0     0       0      0       0        0
+ovl9_011          8120     3208       0      0     0     0       0      0       0        0
+ovl9_012          4616     1577       0      0     0     0       0      0       0        0
+ovl9_013          5000     1785       0      0     0     0       0      0       0        0
+ovl9_014          3352     1320       0      0     0     0       0      0       0        0
+ovl9_015          1800      213       0      0     0     0       0      0       0        0
+ovl9_016          6056     2270       0      0     0     0       0      2       0        0
+ovl9_017          8232     3261       0      0     0     0       0      0       0        0
+ovl9_018          7176     2683       0      0     0     0       0      0       0        0
+ovl9_019          4576      835       0      0     0     0       0      0       0        0
+ovl9_020          7912     3224       0      0     0     0       0      0       0        0
+ovl9_021         16312     3066       0      0     0     0       3     22      39        0
+ovl9_022          7120     2376       0      0     0     0       0      0       0        0
+ovl9_023          3504     1323       0      0     0     0       0      0       0        0
+ovl9_024          4152     1559       0      0     0     0       0      0       0        0
+ovl9_025          1768      646       0      0     0     0       0      0       0        0
+ovl9_026          2008      711       0      0     0     0       0      0       0        0
+ovl9_027          8168     2992       0      0     0     0       0      3       0        0
+ovl9_028          5504     2235       0      0     0     0       0      0       0        0
+ovl9_029         12568     4710       0      0     0     0       0      6       0        0
+ovl9_030          4424     1483       0      0     0     0       0      0       0        0
+------------------------------------------------------------------------------------------
+TOTAL           713016   201420       8      2    28     8       6     67      50        0
+
+The load-bearing columns are `refill` and `cluster`.  On the 2003
+GameCube positive the same probe finds 14 refills and 4 clusters,
+one cluster per decoder copy, without being told where to look.
+
+No ARM build carrying this codec is known, so a zero here has no
+same-toolchain positive standing behind it.  `--selftest` shows the
+detectors fire on hand-assembled instances of what they look for.

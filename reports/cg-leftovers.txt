@@ -1,0 +1,827 @@
+========================================================================
+arm7.bin -- 159528 bytes, 4 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+arm9.bin -- 745464 bytes, 623 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+  0x00000BC3  ![SDK+NINTENDO:BACKUP]
+  0x00000BDC  [SDK+Actimagine:Mobiclip SDK V1.0.2]
+  0x000A0DA9  ADXT/NITRO Ver.10.62 Build:Aug 26 2008 16:33:56
+  0x000A0E15  NITROCI/NITRO Ver.1.04 Build:Aug 26 2008 16:33:58
+  0x000A0E59  NITRORNA/NITRO Ver.1.06 Build:Aug 26 2008 16:34:00
+  0x000A0F75  CRI CRW:STD/NITRO Ver.0.83 Build:Aug 26 2008 16:34:03
+  0x000A7EC0  CRISS is not initialized.
+  0x000A9291  ADXNITROSDK Ver.
+  0x000A92A4  E2008011801: already ADXNITRO_SetupFs() called.
+  0x000A92ED  ADXNITRO Ver.1.07 Build:Aug 26 2008 16:33:59
+  0x000A93D4  E0092901:fname is null.(nitroCiGetFileSize)
+  0x000A9420  E0092908:fname is null.(nitroCiOpen)
+  0x000A9448  E0092909:rw is illigal.(nitroCiOpen)
+  0x000A9470  E0092910:not enough handle resource.(nitroCiOpen)
+  0x000A94A4  E0092920:can't open (nitroCiOpen)
+  0x000A9510  E0092913:nsct < 0.(nitroCiReqRd)
+  0x000A9534  E0092914:buf is null.(nitroCiReqRd)
+  0x000A9558  E0092915:nsct >= 0x100000 .(nitroCiReqRd)
+  0x000A9665  MFCI/NITRO Ver.1.23 Build:Aug 26 2008 16:34:00
+  0x000A9894  CRI-MW
+  0x000AABAD  AHX/NITRO Ver.1.85 Build:Aug 26 2008 16:34:02
+  0x000AB02D  ADXCS/NITRO Ver.1.25 Build:Aug 26 2008 16:34:02
+
+-- absolute paths and source file names --
+  0x000A0C6D  /cAcCcOc_cgcmcqcwc
+  0x000A6F20  /s/sound_data.sdat
+  0x000A7CD8  /movie/MOV
+  0x000A7D34  /m/rmp.b
+  0x000A7D48  /m/rmp.dat
+  0x000AE9CF  /trialFont8.NFTR
+  0x000AE9E4  /trialFont10.NFTR
+  0x000AE9F8  /trialFont12.NFTR
+  0x000AEE3C  /menu/MENU_BG.dat
+  0x000AEEDC  Menu_Cursor.c
+  0x000AEFEC  /item/icon/ItemIcon.b
+  0x000AF004  /item/icon/ItemIcon.dat
+  0x000AFDCC  /menu/MENU_BG.b
+  0x000AFE94  /item/TODS9_ItemData.dat
+  0x000AFEB0  /item/TODS9_MaterialData.dat
+  0x000AFED0  /item/TODS9_AccessoryData.dat
+  0x000AFEF0  /item/TODS9_ValueData.dat
+  0x000AFF0C  /item/TODS9_SormaData.dat
+  0x000B4E1C  /m/misc/etc/mesiconfc.bin
+  0x000B4E38  /fc/fcscr.b
+  0x000B4E54  /fc/fc.dat
+  0x000B4E70  /fc/fcscr.dat
+  0x000B4E80  /fc/fc.b
+  0x000B4E8C  /vbp_pack.wpd
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+  0x000A68FC  %m/%d/%y
+  0x000A6914  %I:%M:%S %p
+  0x000A6D60  St11logic_error
+  0x000A6D70  St12length_error
+  0x000A6DAC  vector length error
+  0x000A6DC0  !std::exception!!std::logic_error!!std::length_error!!
+  0x000A7BF0  (CScript)Error : SetAccVar() VOID
+  0x000A7C14  (CScript)Error : Stack underflow.
+  0x000A7C38  (CScript)Error : Stack overflow.
+  0x000A7CD8  /movie/MOV%03d.mods
+  0x000A7CEC  /movie/MOV%03d_A.mods
+  0x000A7D04  /movie/MOV%03d_B.mods
+  0x000A7D40  %s.rbin
+  0x000A81C4  E02080804 adxt_Create: parameter error
+  0x000A8248  E02080805 adxt_Destroy: parameter error
+  0x000A8270  E02080813 adxt_Stop: parameter error
+  0x000A8298  E02080814 adxt_GetStat: parameter error
+  0x000A82C0  E02080820 adxt_GetNumChan: parameter error
+  0x000A8320  E07041801 adxt_SetOutPan: parameter error
+  0x000A834C  E8101208 adxt_SetOutPan: parameter error
+  0x000A8378  E02080823 adxt_SetOutVol: parameter error
+  0x000A83A4  E02080824 adxt_GetOutVol: parameter error
+  0x000A83D0  E02080828 adxt_SetLpFlg: parameter error
+  0x000A83FC  E02080847 adxt_GetStatPause: parameter error
+  0x000A842C  E02080811 adxt_StartAfs: parameter error
+  0x000A847C  E02080807 adxt_StartFnameRange: parameter error
+  0x000A84AC  E02080809 adxt_StartMem2: parameter error
+  0x000A8504  E02080810 adxt_StartMemIdx: parameter error
+  0x000A85CC  E02080842 adxt_ExecHndl: parameter error
+  0x000A8628  SJRBF Error
+  0x000A8A9C  SJMEM Error
+  0x000A8D9C  2103102:SVM:svm_unlock:lock type miss match.(type org=%d, type now=%d)
+  0x000A9058  cvFsOpen #5:vtbl error
+  0x000A9090  cvFsClose #1:handle error
+  0x000A90AC  cvFsClose #2:vtbl error
+  0x000A90C4  cvFsTell #1:handle error
+  0x000A90E0  cvFsTell #2:vtbl error
+  0x000A90F8  cvFsSeek #1:handle error
+  0x000A9114  cvFsSeek #2:vtbl error
+  0x000A912C  cvFsReqRd #1:handle error
+  0x000A9148  cvFsReqRd #2:vtbl error
+  0x000A9160  cvFsGetStat #1:handle error
+  0x000A917C  cvFsGetStat #2:vtbl error
+  0x000A920C  cvFsGetFileSize #4:vtbl error
+  0x000A9408  NDSCARD%08x.%08x.%08x
+  0x000AF0AC  Menu_Debug
+  0x000AF424  Menu_Debug_Help
+  0x000B02E8  tree::insert length error
+  0x000B4DB0  %s%03x
+  0x000B4E44  %s_%02x_00.ds3
+  0x000B4E60  fc%03d.fcbin
+  0x000B4EA4  %s%02d%02d%02d%c
+  0x000B4EB8  %s%02d%02d%02d
+  0x000B4EC8  %s%02d%02d%c
+  0x000B4ED8  %s%02d%02d
+  0x000B4EFC  s/lvd/%s.lvd
+
+========================================================================
+ovl9_000.bin -- 298144 bytes, 4044 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_001.bin -- 584160 bytes, 473 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  0x0008DFF4  Nov 19 2008
+
+-- SDK, middleware and company names --
+  0x0008B798  CRITICAL on
+  0x0008B8A0  CRITICAL off
+
+-- absolute paths and source file names --
+  0x0008A344  /btl/eff/sysresTextureTex.efg
+  0x0008A364  /btl/magic/mag.b
+  0x0008A378  /btl/magic/mag.dat
+  0x0008A3A0  /btl/eff/Tex.b
+  0x0008A3B0  /btl/eff/Tex.dat
+  0x0008DD00  /btl/common/common.ds3
+  0x0008DD18  /btl/common/common.cbb
+  0x0008DD30  /btl/common/shadow.ds3
+  0x0008DD48  /btl/common/face_LZ.bin
+  0x0008DD60  /btl/prm/TO9_EnemyData.dat
+  0x0008DD7C  /btl/prm/TO9_EncountTable.dat
+  0x0008DD9C  /btl/prm/To9_DialogueData.bin
+  0x0008DDBC  /btl/prm/To9_BattleEventData.bin
+  0x0008DDE0  /btl/prm/TO9_EncountGroupData.dat
+  0x0008DE04  /btl/debug/debug.b
+  0x0008DE18  /btl/debug/debug.dat
+  0x0008DE30  debug000.bin
+  0x0008DE90  d_LZ.bin
+  0x0008DEA4  /btl/cut_in/cut_in.b
+  0x0008DEE8  /btl/cut_in/cut_in.dat
+  0x0008DFCC  03d.bin
+  0x0008E2C4  /btl/map/map.b
+  0x0008E2D4  /btl/map/map.dat
+  0x0008E2E8  03d_LZ.bin
+  0x0008E338  /btl/char/char.b
+  0x0008E360  /btl/char/char.dat
+  0x0008E394  03d_win_LZ.bin
+  0x0008E5C0  02d_stk_LZ.bin
+  0x0008E5D8  03d_0_LZ.bin
+  0x0008E788  03d_win_stv.bin
+
+-- file names the code carries --
+  0x0008DCD4  DebugBtlMapInfo.dat
+  0x0008DE30  debug000.bin
+  0x0008E2B4  btl_wall.dat
+
+-- diagnostics, format strings and debug text --
+  0x0008A38C  e%03d_%01dTex.efg
+  0x0008B598  LV   %d
+  0x0008B750  LV      %d
+  0x0008B840  Page -%d/%d-
+  0x0008B8E3  HP  %d/%d
+  0x0008BAA0  Menu debug on
+  0x0008BB70  SEL_SYS_ERROR
+  0x0008C070  Menu debug off
+  0x0008C090  Use Data Debug
+  0x0008D1EB   top:0x%X, many:%d
+  0x0008D2A5  s(btl_map_%03d)
+  0x0008D2CE  (btl_map_%03d)
+  0x0008D355  Y = %f
+  0x0008D364  g(0x%X)
+  0x0008DCD4  DebugBtlMapInfo.dat
+  0x0008DE04  /btl/debug/debug.b
+  0x0008DE18  /btl/debug/debug.dat
+  0x0008DE30  debug000.bin
+  0x0008DE90  cutin%03dv%d_LZ.bin
+  0x0008DF00  <%s_%d:%3d:%d:%s:%s>
+  0x0008DF18  <%s_%02d_stk:%3d:%d:%s:%s>
+  0x0008DF34  <%s_%d_win:%3d:%d:%s:%s>
+  0x0008DF50  <e%03d_%d:%3d:%d:%s:%s:%s>
+  0x0008DF6C  <e%03d_%02d_stk:%3d:%d:%s:%s:%s>
+  0x0008DF90  <e%03d_%d_win:%3d:%d:%s:%s:%s>
+  0x0008DFB0  <%s_%d>
+  0x0008DFB8  <e%03d_%d:%d:%s>
+  0x0008DFCC  debug%03d.bin
+  0x0008DFDC  heap %dK
+  0x0008DFE8  TO9:%s
+  0x0008E028  <%s:%03d:%s>
+  0x0008E064  <%s%s%df>
+  0x0008E070  <%s%s>
+  0x0008E078  <%s%df>
+  0x0008E0A8  <%03d:%s>
+  0x0008E0BC  <%s:%s%03d>
+  0x0008E0C8  <%s:e%03d:%d:%s>
+  0x0008E0FC  <%s:%d%>
+  0x0008E118  <%s>X:<%d:%s>
+  0x0008E128  <%s>X:<0x%X>
+  0x0008E158  <%s:%d>
+  0x0008E198  <%s:%03d>R:<%d>%s
+  0x0008E1AC  <%s:%03d>R:<%d>%s:%d
+  0x0008E1F4  <%s%03d:gp:%d>
+  0x0008E20C  <%s%03d>
+  0x0008E24C  %s          
+  0x0008E2E8  btl_map_%03d_LZ.bin
+  0x0008E328  e%03d_%d_LZ.bin
+  0x0008E374  e%03d.ds3
+  0x0008E380  e%03d_%02d_stk.ds3
+  0x0008E394  e%03d_win_LZ.bin
+  0x0008E3F8  e%03d_stk.ds3
+  0x0008E430  e%03d_LZ.bin
+  0x0008E5C0  e%03d_%02d_stk_LZ.bin
+  0x0008E5D8  e%03d_0_LZ.bin
+  0x0008E624  %d/%d:%s
+  0x0008E630  X:%.2f
+  0x0008E638  Y:%.2f
+  0x0008E640  DX:%.2f
+  0x0008E648  DY:%.2f
+  0x0008E660  RX:%.2f
+  0x0008E668  RH:%.2f
+  0x0008E670  RL:%.2f
+  0x0008E6A0  G:%.2f
+  0x0008E6B0  F:%.2f
+  0x0008E6B8  %d,%d,%d
+  0x0008E6DC  %d,%d,%d,%d
+  0x0008E788  e%03d_win_stv.bin
+
+========================================================================
+ovl9_002.bin -- 4256 bytes, 0 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_003.bin -- 392800 bytes, 362 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x0005B4CC  /m/misc/2D/
+  0x0005B4E0  /m/misc/2d/
+  0x0005B520  03d.bin
+  0x0005B52C  /m/o.dat
+  0x0005BB50  /m/misc/etc/mapsteff.bin
+  0x0005BB6C  /m/p.dat
+  0x0005BD0C  /m/m.dat
+  0x0005BD3C  /m/misc/etc/lc.bin
+  0x0005BD8C  sp.s
+  0x0005BD94  s.s
+  0x0005BD9C  _st.c
+  0x0005BE6C  sring.bin
+  0x0005C0CC  /btl/prm/To9_EncountAreaData.dat
+  0x0005C0F0  /btl/prm/To9_EncountTable.dat
+  0x0005C110  /btl/prm/To9_EncountGroupData.dat
+  0x0005C22C  /m/misc/etc/eb.ds3
+  0x0005C27C  098.bin
+  0x0005C3FC  /m/misc/etc/acthelpwin.bin
+  0x0005C420  087.bin
+  0x0005C464  /m/misc/etc/townNameJewel.ds3
+  0x0005C484  /m/misc/etc/tn.dat
+  0x0005C4F8  084.bin
+  0x0005C50C  085.bin
+  0x0005C718  /m/misc/etc/weather.bin
+  0x0005D9FC  s.bin
+  0x0005DE3C  /m/misc/etc/meswin.bin
+  0x0005E9B0  /menu/NAVIMAP_BG.b
+  0x0005E9C4  /menu/NAVIMAP_BG.dat
+  0x0005EA2C  /item/icon/ItemIcon.b
+  0x0005EA44  /item/icon/ItemIcon.dat
+  0x0005EAC0  /menu/MENU_BG.dat
+  0x0005FE20  /m/hsr.bin
+  0x0005FE2C  /m/misc/2D/erimg.dat
+
+-- file names the code carries --
+  0x0005C27C  098.bin
+  0x0005C420  087.bin
+  0x0005C4F8  084.bin
+  0x0005C50C  085.bin
+  0x0005DDA8  TODS3_SpirLinkTreasureData.dat
+  0x0005DDC8  TODS3_LinkCounterData.dat
+  0x0005E9A0  Navi_capt01.dat
+
+-- diagnostics, format strings and debug text --
+  0x0005B4CC  /m/misc/2D/%s.dat
+  0x0005B4E0  /m/misc/2d/%s.ds3
+  0x0005B520  %03d.bin
+  0x0005BBCC  _e%03d.ds3
+  0x0005BC04  enm_%s
+  0x0005BC0C  %s_%s_%02d
+  0x0005BC3C  $a_st_%02x_%02x
+  0x0005BC4C  $a_%02x_%02x_%02x_%02x
+  0x0005BCC8  %s%03d
+  0x0005BCD0  %s%03d_%02d
+  0x0005BD18  %s.mapstat
+  0x0005BD24  %s.mapbin
+  0x0005BD64  $_%02x_00
+  0x0005BD70  $_%02x_%02x
+  0x0005BD8C  %sp.scp
+  0x0005BD94  %s.scp
+  0x0005BDB4  player_p_%02x_00
+  0x0005BE4C  t_box_%02x_00
+  0x0005BE5C  enemy_p_%02x_00
+  0x0005C134  enm_%s.ds3
+  0x0005D9FC  %s.bin
+  0x0005E824  Navi_%s
+
+========================================================================
+ovl9_004.bin -- 32 bytes, 0 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_005.bin -- 15264 bytes, 22 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+  0x00003AF0  %s.ds3
+  0x00003B44  /title/%s%s
+
+========================================================================
+ovl9_006.bin -- 48192 bytes, 5 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x0000B9F0  /menu/CHARA_FACE.dat
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+  0x0000BA88  %3d  %02d
+
+========================================================================
+ovl9_007.bin -- 24192 bytes, 12 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x00005D40  /item/CTODS3_ToolShopData.bin
+  0x00005D60  /item/CTODS3_MaterialShopData.bin
+  0x00005D84  /item/CTODS3_AnyShopData.bin
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_008.bin -- 38208 bytes, 16 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x000093F0  /item/CTODS3_AccessoryShopData.bin
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_009.bin -- 35616 bytes, 11 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x000089A8  /item/CTODS3_CureStoneShopData.bin
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_010.bin -- 16736 bytes, 2 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_011.bin -- 32480 bytes, 6 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x00007DA0  /menu/CHARA_FACE.dat
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+  0x00007E0C  %2d/%d
+  0x00007EC4  %2d/%2d
+
+========================================================================
+ovl9_012.bin -- 18464 bytes, 3 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x000047B0  /menu/CHARA_FACE.dat
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+  0x000047F4  %d  %02d
+
+========================================================================
+ovl9_013.bin -- 20000 bytes, 3 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x00004DB0  /menu/CHARA_FACE.dat
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+  0x00004DEC  %d  %02d
+
+========================================================================
+ovl9_014.bin -- 13408 bytes, 4 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x00003420  /menu/CHARA_FACE.dat
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_015.bin -- 7200 bytes, 5 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_016.bin -- 24224 bytes, 10 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+  0x00005E94  %2d/%d
+
+========================================================================
+ovl9_017.bin -- 32928 bytes, 1 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+  0x00008048  %2d/%2d
+
+========================================================================
+ovl9_018.bin -- 28704 bytes, 1 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_019.bin -- 18304 bytes, 9 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+  0x000046A4  %3d:%02d
+  0x0000472C  %d / %d
+  0x00004748  %d(f) %d(s)
+
+========================================================================
+ovl9_020.bin -- 31648 bytes, 34 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x0000734C  /menu/BERYL.dat
+  0x0000735C  /menu/INNES.dat
+  0x0000736C  /menu/HISUI.dat
+  0x0000737C  /menu/SHING.dat
+  0x0000738C  /menu/KOHAKU.dat
+  0x000073A0  /menu/KOHAKU2.dat
+  0x000073B4  /menu/KUNZITE.dat
+  0x000073C8  /menu/Link_SHING.dat
+  0x000073E0  /menu/Link_INNES.dat
+  0x000073F8  /menu/Link_BERYL.dat
+  0x00007410  /menu/Link_HISUI.dat
+  0x00007428  /menu/Link_KOHAKU.dat
+  0x00007440  /menu/Link_KUNZITE.dat
+  0x00007458  /menu/Link_KOHAKU2.dat
+  0x000079D4  /menu/CHARA_FACE.dat
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_021.bin -- 65248 bytes, 10 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x0000FE60  /m/misc/2D/Menu_Event.dat
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_022.bin -- 28480 bytes, 25 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x0000699C  /menu/WORLDMAP_1.dat
+  0x000069B4  /menu/WORLDMAP_2.dat
+  0x00006C70  /item/CTODS3_ToolShopData.bin
+  0x00006C90  /item/CTODS3_MaterialShopData.bin
+  0x00006CB4  /item/CTODS3_AccessoryShopData.bin
+  0x00006CD8  /item/CTODS3_CureStoneShopData.bin
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_023.bin -- 14016 bytes, 5 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+  0x000036A0  %2d/%2d
+
+========================================================================
+ovl9_024.bin -- 16608 bytes, 2 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+  0x000040C0  %2d/%d
+
+========================================================================
+ovl9_025.bin -- 7072 bytes, 11 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+  0x00001B60  TODS3_BtlMemoData.dat
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_026.bin -- 8032 bytes, 12 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+  0x00001F20  TODS3_OutLineData.dat
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_027.bin -- 32672 bytes, 12 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x00007E18  /btl/prm/TO9_EnemyData.dat
+  0x00007E34  /menu/monsterbook/EnemyIcon.b
+  0x00007E64  /menu/monsterbook/EnemyIcon.dat
+
+-- file names the code carries --
+  0x00007AFC  e999_0.dat
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_028.bin -- 22016 bytes, 1 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+  0x00005510  %5d/%d
+
+========================================================================
+ovl9_029.bin -- 50272 bytes, 38 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x0000C028  /item/icon/ItemIcon.b
+  0x0000C040  /item/icon/ItemIcon.dat
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+========================================================================
+ovl9_030.bin -- 17696 bytes, 9 printable runs of 6 or more
+========================================================================
+
+-- build stamps (__DATE__ / __TIME__ shape) --
+  none
+
+-- SDK, middleware and company names --
+
+-- absolute paths and source file names --
+  0x00004410  /menu/spirlink/SpirLinkIcon.b
+  0x00004430  /menu/spirlink/SpirLinkIcon.dat
+
+-- file names the code carries --
+
+-- diagnostics, format strings and debug text --
+
+Traceback (most recent call last):
+  File "D:\Homebrew7\nds-talesofhearts-doc\tools\leftovers.py", line 389, in <module>
+    main(sys.argv)
+    ~~~~^^^^^^^^^^
+  File "D:\Homebrew7\nds-talesofhearts-doc\tools\leftovers.py", line 313, in main
+    data = open(path, 'rb').read()
+           ~~~~^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '6'

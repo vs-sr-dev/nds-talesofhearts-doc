@@ -1,0 +1,23 @@
+deflate control on anime.nds
+
+class                                    count          bytes       deflated    ratio
+container (FPS4 / V154)                     75       99635302       75376900   75.65%
+voice (CRI AHX)                           4456       91033886       84899563   93.26%
+video (Mobiclip)                            10       25775082       25524851   99.03%
+sound archive (SDAT)                         1       21146560       17257821   81.61%
+the unused tail                              1       18648412          18144    0.10%
+BIOS-format stream                          15        5872380        5254877   89.48%
+everything else                            557        3150396         989686   31.41%
+executable, BLZ plaintext                   33        2852064        1338597   46.93%
+executable, BLZ-packed as shipped           32        1461252        1298795   88.88%
+executable, ARM7 (not packed)                1         159528          86169   54.01%
+TOTAL                                     5181      269734862      212045403   78.61%
+
+the whole image as one buffer: 268435456 bytes -> 78.24%
+
+for comparison, the same measurement on other builds:
+  Tales of the Tempest, DS 2006     52.6%  (data stored raw)
+  Tales of Innocence,   DS 2007     73.5%  -- 91.27% for its
+                                    containers, 52.23% for the rest
+  Ratatosk no Kishi,    Wii 2008    89.62% / 50.74%
+  Tales of Vesperia,    X360 2008   99.20% / 33.19%

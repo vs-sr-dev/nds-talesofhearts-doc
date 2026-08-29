@@ -1,0 +1,41 @@
+arm7.bin         159528 bytes      0 length-prefixed type names
+arm9.bin         745464 bytes      5 length-prefixed type names
+ovl9_000.bin     298144 bytes      9 length-prefixed type names
+ovl9_001.bin     584160 bytes      2 length-prefixed type names
+ovl9_002.bin       4256 bytes      0 length-prefixed type names
+ovl9_003.bin     392800 bytes      2 length-prefixed type names
+ovl9_004.bin         32 bytes      0 length-prefixed type names
+ovl9_005.bin      15264 bytes      0 length-prefixed type names
+ovl9_006.bin      48192 bytes      0 length-prefixed type names
+ovl9_007.bin      24192 bytes      0 length-prefixed type names
+ovl9_008.bin      38208 bytes      0 length-prefixed type names
+ovl9_009.bin      35616 bytes      0 length-prefixed type names
+ovl9_010.bin      16736 bytes      0 length-prefixed type names
+ovl9_011.bin      32480 bytes      0 length-prefixed type names
+ovl9_012.bin      18464 bytes      0 length-prefixed type names
+ovl9_013.bin      20000 bytes      0 length-prefixed type names
+ovl9_014.bin      13408 bytes      0 length-prefixed type names
+ovl9_015.bin       7200 bytes      0 length-prefixed type names
+ovl9_016.bin      24224 bytes      0 length-prefixed type names
+ovl9_017.bin      32928 bytes      0 length-prefixed type names
+ovl9_018.bin      28704 bytes      0 length-prefixed type names
+ovl9_019.bin      18304 bytes      0 length-prefixed type names
+ovl9_020.bin      31648 bytes      0 length-prefixed type names
+ovl9_021.bin      65248 bytes      0 length-prefixed type names
+ovl9_022.bin      28480 bytes      0 length-prefixed type names
+ovl9_023.bin      14016 bytes      0 length-prefixed type names
+ovl9_024.bin      16608 bytes      0 length-prefixed type names
+ovl9_025.bin       7072 bytes      0 length-prefixed type names
+ovl9_026.bin       8032 bytes      0 length-prefixed type names
+ovl9_027.bin      32672 bytes      0 length-prefixed type names
+ovl9_028.bin      22016 bytes      0 length-prefixed type names
+ovl9_029.bin      50272 bytes      0 length-prefixed type names
+ovl9_030.bin      17696 bytes      0 length-prefixed type names
+
+18 names over 33 images
+
+== by leading identifier ==
+  GROUP             NAMES  IMAGES
+  hd                    9  ovl9_000.bin
+  F00                   2  ovl9_001.bin
+

@@ -1,0 +1,1754 @@
+
+########## arm7.bin
+========================================================================
+_work/mod_cg/arm7.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (11911 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (5253 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (39882 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+     0x00000CF0  and     r2,r7,#65280
+     0x00006300  and     r3,r3,#65280
+     0x000063C8  and     r12,r12,#65280
+     0x00006480  and     r2,r2,#65280
+     0x00008B94  add     r0,r2,#65280
+     0x0000AC3C  and     r3,r0,#65280
+     0x0000AC58  and     r3,r3,#65280
+     0x0000AC5C  and     r12,r0,#65280
+     0x0000C09C  and     r0,r1,#65280
+     0x0000CB1C  and     r0,r2,#65280
+     0x0000D5E0  and     r0,r2,#65280
+     0x0000FF64  and     r0,r1,#65280
+     0x0001218C  add     r0,r0,#65280
+     0x00012304  add     r0,r0,#65280
+     0x00014468  add     r0,r0,#65280
+     0x00017AD4  add     r0,r0,#65280
+     0x0001A3D8  andeq   r2,r2,#65280
+     0x0001C2AC  add     r0,r0,#65280
+     0x0001FAB8  add     r0,r0,#65280
+     0x000246C0  and     r2,r0,#65280
+     0x00024714  and     r12,r12,#65280
+     0x00024C64  and     r2,r0,#65280
+     0x00024D8C  and     r2,r0,#65280
+     0x00024EB8  and     r3,r0,#65280
+     0x00024FC4  and     r3,r0,#65280
+     0x000250BC  and     r2,r0,#65280
+     0x00025144  and     r2,r0,#65280
+     0x000267E8  bic     r3,r3,#65280
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     28 constant-returning stubs in the image
+     the first 0 are round(4096 * cos(theta)) for theta = 0..-1 degrees, to within one
+     first twelve: 1, 1, 0, 41938944, 58720256, 0, 41914848, 0, 41941632, 1, 1, 1
+     round(4096 * cos 5deg) = 4080 -- which is the 4080
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## arm9.bin
+========================================================================
+_work/mod_cg/arm9.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (45104 instructions scanned) --
+    0x00081C3C  add r0,r4,#4080
+      00081C2C  E2800B03   add     r0,r0,#3072
+      00081C30  E5841B5C   str    r1,[r4,#2908]
+      00081C34  EBFE7DE6   bl       0x000213D4
+      00081C38  E59F10CC   ldr    r1,[pc,#204]   ; 0x00081D0C
+      00081C3C  E2840EFF   add     r0,r4,#4080
+      00081C40  E5841DA4   str    r1,[r4,#3492]
+
+    0x00088C3C  add r0,r5,#4080
+      00088C2C  E59F121C   ldr    r1,[pc,#540]   ; 0x00088E50
+      00088C30  E28D00D8   add     r0,sp,#216
+      00088C34  EBFDEAEF   bl       0x000037F8
+      00088C38  EA00002C   b       0x00088CF0
+      00088C3C  E2850EFF   add     r0,r5,#4080
+      00088C40  E2800A0F   add     r0,r0,#61440
+
+    0x00096298  and r12,r1,#4080
+      00096288  E3540000   cmp     r4,#0
+      0009628C  0A000028   beq     0x00096334
+      00096290  E20136FF   and     r3,r1,#0xFF00000
+      00096294  E201EAFF   and     lr,r1,#0xFF000
+      00096298  E201CEFF   and     r12,r1,#4080
+      0009629C  E3500007   cmp     r0,#7
+
+
+-- THUMB literal fields matching the same set (26444 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (186366 words scanned) --
+    0x000A7088  = 4080  NOT referenced by any PC-relative load
+      neighbouring words: 00000FE1 00000FEA 00000FF0 00000FF6 00000FFA
+
+    0x000A70B0  = 4080  NOT referenced by any PC-relative load
+      neighbouring words: 00000FFA 00000FF6 00000FF0 00000FEA 00000FE1
+
+    0x000A74E8  = 4080  NOT referenced by any PC-relative load
+      neighbouring words: 00000FFA 00000FF6 00000FF0 00000FEA 00000FE1
+
+    0x000A7A60  = 4080  NOT referenced by any PC-relative load
+      neighbouring words: 00000FE1 00000FEA 00000FF0 00000FF6 00000FFA
+
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+     0x0002638C  and     r0,r0,#65280
+     0x00026448  and     r1,r1,#65280
+     0x000267C4  and     r1,r1,#65280
+     0x00035174  and     r1,r1,#65280
+     0x000351A8  and     r1,r1,#65280
+     0x000351D8  and     r1,r1,#65280
+     0x00035204  and     r1,r1,#65280
+     0x00035238  and     r1,r1,#65280
+     0x000352C0  and     r0,r0,#65280
+     0x000352F4  and     r0,r0,#65280
+     0x00035320  and     r0,r0,#65280
+     0x0003533C  and     r0,r0,#65280
+     0x00035358  and     r0,r0,#65280
+     0x00035374  and     r0,r0,#65280
+     0x00035400  and     r2,r2,#65280
+     0x00035438  and     r0,r0,#65280
+     0x00035470  and     r1,r1,#65280
+     0x00035494  and     r1,r1,#65280
+     0x000354C8  and     r3,r3,#65280
+     0x000354EC  and     r3,r3,#65280
+     0x0003551C  and     r3,r3,#65280
+     0x0003554C  and     r3,r3,#65280
+     0x0003557C  and     r2,r2,#65280
+     0x00035608  and     r2,r2,#65280
+     0x00035644  and     r0,r0,#65280
+     0x00035684  and     r0,r0,#65280
+     0x000356E8  and     r3,r3,#65280
+     0x00035744  and     r3,r3,#65280
+     0x00035760  and     r2,r2,#65280
+     0x0003577C  and     r1,r1,#65280
+     0x000357B4  and     r1,r1,#65280
+     0x000357EC  and     r1,r1,#65280
+     0x0003585C  and     r4,r4,#65280
+     0x00035A34  and     r4,r4,#65280
+     0x00035AB8  and     r4,r4,#65280
+     0x00035E44  and     r12,r12,#65280
+     0x00035ECC  and     r12,r12,#65280
+     0x00036EC8  and     r0,r0,#65280
+     0x000399C0  and     r0,r0,#65280
+     0x00039A04  and     r0,r0,#65280
+     0x0004015C  add     r0,r0,#65280
+     0x0005C8E4  orrgt   r3,r3,#65280
+     0x0005C904  orrgt   r3,r3,#65280
+     0x0005D014  orrgt   r0,r3,#65280
+     0x0005D038  orrgt   r0,r0,#65280
+     0x0005D098  orrgt   r0,r3,#65280
+     0x0005D0BC  orrgt   r0,r0,#65280
+     0x0005D180  orrgt   r0,r0,#65280
+     0x0005D1A4  orrgt   r1,r1,#65280
+     0x0005E88C  bic     lr,r5,#65280
+     0x0006F440  cmp     r0,#65280
+     0x0006F544  cmp     r0,#65280
+     0x00071A00  and     r3,r3,#65280
+     0x00071AC8  and     r12,r12,#65280
+     0x00071B80  and     r2,r2,#65280
+     0x00088A48  add     r0,r0,#65280
+     0x00088AE8  add     r0,r0,#65280
+     0x00088B38  add     r0,r0,#65280
+     0x00088BBC  add     r0,r0,#65280
+     0x00091FD0  and     r2,r2,#65280
+     0x00091FDC  and     r1,r0,#65280
+     0x00092008  and     r2,r2,#65280
+     0x00092014  and     r1,r0,#65280
+     0x00092064  and     r2,r2,#65280
+     0x00092074  and     r0,r0,#65280
+     0x000920A4  and     r10,r10,#65280
+     0x000920B0  and     r1,r1,#65280
+     0x0009230C  and     r12,r12,#65280
+     0x0009231C  and     r1,r1,#65280
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+     0x0006D894
+      0006D88C  E1CD30B2   strh   r3,[sp,#2]
+      0006D890  E59D4000   ldr    r4,[sp]
+      0006D894  E1A03A04   mov     r3,r4,lsl #20
+      0006D898  E1A05A23   mov     r5,r3,lsr #20
+      0006D89C  E1A0E404   mov     lr,r4,lsl #8
+      0006D8A0  E1A03384   mov     r3,r4,lsl #7
+      0006D8A4  E1A0CFA3   mov     r12,r3,lsr #31
+      0006D8A8  E1A03284   mov     r3,r4,lsl #5
+
+   * every `add #19`, both instruction sets
+     THUMB 0x0000E224  add r6,#19 -- containing ARM word 0xE1B03613  movs    r3,r3,lsl r6
+     THUMB 0x0000E274  add r4,#19 -- containing ARM word 0xE1B03413  movs    r3,r3,lsl r4
+     THUMB 0x000106A0  add r5,#19 -- containing ARM word 0xE1B03513  movs    r3,r3,lsl r5
+     THUMB 0x0001AE98  add r2,#19 -- containing ARM word 0xE1A03213  mov     r3,r3,lsl r2
+     THUMB 0x0001AED4  add r2,#19 -- containing ARM word 0xE1A03213  mov     r3,r3,lsl r2
+     THUMB 0x0002F1E8  add r2,#19 -- containing ARM word 0xE1843213  orr     r3,r4,r3,lsl r2
+     THUMB 0x000440D4  add r0,#19 -- containing ARM word 0xE5D03013  ldrb   r3,[r0,#19]
+     THUMB 0x0005DBB8  add r1,#19 -- containing ARM word 0xE1A03113  mov     r3,r3,lsl r1
+     THUMB 0x00080FA0  add r3,#19 -- containing ARM word 0xEBFF3313  bl       0x0004DBF4
+     THUMB 0x00087E98  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     115 constant-returning stubs in the image
+     the first 0 are round(4096 * cos(theta)) for theta = 0..-1 degrees, to within one
+     first twelve: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+     round(4096 * cos 5deg) = 4080 -- which is the 4080
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     word at 0x000A7088: 96 of 96 surrounding aligned words are
+       round(4096 * cos theta) to within one, for theta starting at -53 degrees
+       run: 2465, 2522, 2578, 2633, 2687, 2741, 2793, 2845, 2896, 2946, 2996, 3044, 3091, 3138, 3183, 3228
+     word at 0x000A70B0: 96 of 96 surrounding aligned words are
+       round(4096 * cos theta) to within one, for theta starting at -43 degrees
+       run: 2996, 3044, 3091, 3138, 3183, 3228, 3271, 3314, 3355, 3396, 3435, 3474, 3511, 3547, 3582, 3617
+     word at 0x000A74E8: 53 of 96 surrounding aligned words are
+       round(4096 * cos theta) to within one, for theta starting at -43 degrees
+       run: -2793, -2741, -2687, -2633, -2578, -2522, -2465, -2408, -2349, -2290, -2231, -2171, -2110, -2048, -1986, -1923
+     word at 0x000A7A60: 53 of 96 surrounding aligned words are
+       round(4096 * cos theta) to within one, for theta starting at -53 degrees
+       run: 2465, 2522, 2578, 2633, 2687, 2741, 2793, 2845, 2896, 2946, 2996, 3044, 3091, 3138, 3183, 3228
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+     0x00029168
+      00029160  E0877000   add     r7,r7,r0
+      00029164  EA000041   b       0x00029270
+      00029168  E210000F   ands    r0,r0,#15
+      0002916C  0A000004   beq     0x00029184
+      00029170  E3500001   cmp     r0,#1
+      00029174  0A000016   beq     0x000291D4
+     0x0002A490
+      0002A488  EA00003F   b       0x0002A58C
+      0002A48C  E5D60052   ldrb   r0,[r6,#82]
+      0002A490  E210000F   ands    r0,r0,#15
+      0002A494  0A000004   beq     0x0002A4AC
+      0002A498  E3500001   cmp     r0,#1
+      0002A49C  0A000015   beq     0x0002A4F8
+     0x000962AC
+      000962A4  E1A0562E   mov     r5,lr,lsr #12
+      000962A8  E1A0E22C   mov     lr,r12,lsr #4
+      000962AC  E201C00F   and     r12,r1,#15
+      000962B0  0A000002   beq     0x000962C0
+      000962B4  E3500009   cmp     r0,#9
+      000962B8  0A00000E   beq     0x000962F8
+
+########## ovl9_000.bin
+========================================================================
+_work/mod_cg/ovl9_000.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (14202 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (15562 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (74536 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     4 constant-returning stubs in the image
+     the first 0 are round(4096 * cos(theta)) for theta = 0..-1 degrees, to within one
+     first twelve: 60, 285, 8, 187
+     round(4096 * cos 5deg) = 4080 -- which is the 4080
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_001.bin
+========================================================================
+_work/mod_cg/ovl9_001.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (43234 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (22853 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (146040 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+     0x00004E44  and     r3,r1,#65280
+     0x00023CD0  sub     r0,r0,#65280
+     0x00023D24  add     r0,r0,#65280
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+     THUMB 0x00029E70  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x00029FA4  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x0002A0D8  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x0002A1E8  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x0002A32C  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x0002A498  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x0002A5F0  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x00044EE0  add r3,#19 -- containing ARM word 0xEBFB3313  bl       0x-00EE4CC
+     THUMB 0x000806F0  add r4,#19 -- containing ARM word 0xEBFA3413  bl       0x-00F28BC
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     13 constant-returning stubs in the image
+     the first 0 are round(4096 * cos(theta)) for theta = 0..-1 degrees, to within one
+     first twelve: 0, 0, 0, 0, 0, 0, 0, 0, 75, 60, 45, 30
+     round(4096 * cos 5deg) = 4080 -- which is the 4080
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_002.bin
+========================================================================
+_work/mod_cg/ovl9_002.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (326 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (112 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (1064 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_003.bin
+========================================================================
+_work/mod_cg/ovl9_003.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (28953 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (12915 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (98200 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+     THUMB 0x00033BB0  add r1,#19 -- containing ARM word 0xE5C13113  strb   r3,[r1,#275]
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     43 constant-returning stubs in the image
+     the first 0 are round(4096 * cos(theta)) for theta = 0..-1 degrees, to within one
+     first twelve: 0, 1, 0, 1, 0, 1, 0, 35203772, 0, 0, 1, 2
+     round(4096 * cos 5deg) = 4080 -- which is the 4080
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_004.bin
+========================================================================
+_work/mod_cg/ovl9_004.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (0 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (0 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (8 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_005.bin
+========================================================================
+_work/mod_cg/ovl9_005.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (1233 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (518 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (3816 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+     0x00000A90  add     r0,r0,#65280
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     5 constant-returning stubs in the image
+     the first 0 are round(4096 * cos(theta)) for theta = 0..-1 degrees, to within one
+     first twelve: 7, 3, 5, 4, 2
+     round(4096 * cos 5deg) = 4080 -- which is the 4080
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_006.bin
+========================================================================
+_work/mod_cg/ovl9_006.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (4215 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (1693 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (12048 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+     THUMB 0x00005194  add r0,#19 -- containing ARM word 0xE5CD3013  strb   r3,[sp,#19]
+     THUMB 0x000062CC  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x00006BEC  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_007.bin
+========================================================================
+_work/mod_cg/ovl9_007.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (2349 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (832 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (6048 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+     0x00002094  and     r1,r1,#65280
+     0x00004FB0  and     r1,r1,#65280
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+     THUMB 0x00002E20  add r0,#19 -- containing ARM word 0xE2423013  sub     r3,r2,#19
+     THUMB 0x00003048  add r0,#19 -- containing ARM word 0xE2423013  sub     r3,r2,#19
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_008.bin
+========================================================================
+_work/mod_cg/ovl9_008.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (3543 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (1286 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (9552 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+     0x000023D8  and     r1,r1,#65280
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+     THUMB 0x00003464  add r0,#19 -- containing ARM word 0xE2423013  sub     r3,r2,#19
+     THUMB 0x00003714  add r0,#19 -- containing ARM word 0xE2423013  sub     r3,r2,#19
+     THUMB 0x00003C38  add r0,#19 -- containing ARM word 0xE2423013  sub     r3,r2,#19
+     THUMB 0x00003F5C  add r0,#19 -- containing ARM word 0xE2423013  sub     r3,r2,#19
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_009.bin
+========================================================================
+_work/mod_cg/ovl9_009.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (3395 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (1194 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (8904 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+     0x000025FC  and     r1,r1,#65280
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+     THUMB 0x00003A20  add r0,#19 -- containing ARM word 0xE2423013  sub     r3,r2,#19
+     THUMB 0x00003C30  add r0,#19 -- containing ARM word 0xE2423013  sub     r3,r2,#19
+     THUMB 0x00004C34  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x00004D30  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x00004EC0  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_010.bin
+========================================================================
+_work/mod_cg/ovl9_010.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (1478 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (554 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (4184 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_011.bin
+========================================================================
+_work/mod_cg/ovl9_011.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (3208 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (1227 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (8120 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+     0x00003988  add     r0,r0,#65280
+     0x00004E84  add     r0,r0,#65280
+     0x0000580C  add     r0,r0,#65280
+     0x000058BC  add     r0,r0,#65280
+     0x00005B18  add     r0,r0,#65280
+     0x00005BC8  add     r0,r0,#65280
+     0x00005E30  add     r0,r0,#65280
+     0x000060AC  add     r0,r0,#65280
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_012.bin
+========================================================================
+_work/mod_cg/ovl9_012.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (1577 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (671 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (4616 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_013.bin
+========================================================================
+_work/mod_cg/ovl9_013.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (1785 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (729 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (5000 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_014.bin
+========================================================================
+_work/mod_cg/ovl9_014.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (1320 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (460 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (3352 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_015.bin
+========================================================================
+_work/mod_cg/ovl9_015.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (213 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (62 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (1800 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+     0x00000738  and     r2,r3,#65280
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_016.bin
+========================================================================
+_work/mod_cg/ovl9_016.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (2270 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (873 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (6056 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+     THUMB 0x00001790  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x00001A5C  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_017.bin
+========================================================================
+_work/mod_cg/ovl9_017.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (3261 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (1225 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (8232 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_018.bin
+========================================================================
+_work/mod_cg/ovl9_018.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (2683 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (1060 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (7176 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     1 constant-returning stubs in the image
+     the first 0 are round(4096 * cos(theta)) for theta = 0..-1 degrees, to within one
+     first twelve: 0
+     round(4096 * cos 5deg) = 4080 -- which is the 4080
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_019.bin
+========================================================================
+_work/mod_cg/ovl9_019.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (835 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (460 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (4576 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_020.bin
+========================================================================
+_work/mod_cg/ovl9_020.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (3224 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (1090 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (7912 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_021.bin
+========================================================================
+_work/mod_cg/ovl9_021.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (3066 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (1841 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (16312 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+     THUMB 0x000091A0  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x000093F8  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x00009630  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x00009858  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x0000997C  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x00009AA0  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x00009BAC  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x00009CD0  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x00009DF4  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x00009F00  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x0000A030  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x0000A170  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x0000A288  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x0000A3A8  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x0000A4B8  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x0000A5B0  add r6,#19 -- containing ARM word 0xE1A03613  mov     r3,r3,lsl r6
+     THUMB 0x0000AA50  add r7,#19 -- containing ARM word 0xE1A03713  mov     r3,r3,lsl r7
+     THUMB 0x0000AB8C  add r7,#19 -- containing ARM word 0xE1A03713  mov     r3,r3,lsl r7
+     THUMB 0x0000ABF8  add r7,#19 -- containing ARM word 0xE1A03713  mov     r3,r3,lsl r7
+     THUMB 0x0000CDD4  add r5,#19 -- containing ARM word 0xE1B03513  movs    r3,r3,lsl r5
+     THUMB 0x0000CE30  add r5,#19 -- containing ARM word 0xE1B03513  movs    r3,r3,lsl r5
+     THUMB 0x0000CEAC  add r5,#19 -- containing ARM word 0xE1B03513  movs    r3,r3,lsl r5
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     4 constant-returning stubs in the image
+     the first 0 are round(4096 * cos(theta)) for theta = 0..-1 degrees, to within one
+     first twelve: 1, 1, 26012, 9600
+     round(4096 * cos 5deg) = 4080 -- which is the 4080
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+     0x0000CDC0
+      0000CDB8  E28B7A02   add     r7,r11,#8192
+      0000CDBC  E7D774A4   ldrb   r7,[r7,r4,lsr #9]
+      0000CDC0  E204500F   and     r5,r4,#15
+      0000CDC4  E1A04224   mov     r4,r4,lsr #4
+      0000CDC8  E204601F   and     r6,r4,#31
+      0000CDCC  E0866007   add     r6,r6,r7
+     0x0000CE0C
+      0000CE04  E08B4084   add     r4,r11,r4,lsl #1
+      0000CE08  E1D440B0   ldrh   r4,[r4]
+      0000CE0C  E204500F   and     r5,r4,#15
+      0000CE10  E1A04224   mov     r4,r4,lsr #4
+      0000CE14  E204601F   and     r6,r4,#31
+      0000CE18  E1A042A4   mov     r4,r4,lsr #5
+     0x0000CE9C
+      0000CE94  E08B4084   add     r4,r11,r4,lsl #1
+      0000CE98  E1D440B0   ldrh   r4,[r4]
+      0000CE9C  E204500F   and     r5,r4,#15
+      0000CEA0  E1A04224   mov     r4,r4,lsr #4
+      0000CEA4  E204601F   and     r6,r4,#31
+      0000CEA8  E1A042A4   mov     r4,r4,lsr #5
+
+########## ovl9_022.bin
+========================================================================
+_work/mod_cg/ovl9_022.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (2376 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (1019 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (7120 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+     0x00002AA8  and     r0,r0,#65280
+     0x00002D80  and     r0,r0,#65280
+     0x000031B4  and     r1,r1,#65280
+     0x000031F8  and     r0,r0,#65280
+     0x00003BBC  and     r0,r0,#65280
+     0x000052DC  and     r0,r3,#65280
+     0x00005880  and     r2,r2,#65280
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_023.bin
+========================================================================
+_work/mod_cg/ovl9_023.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (1323 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (545 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (3504 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_024.bin
+========================================================================
+_work/mod_cg/ovl9_024.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (1559 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (631 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (4152 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_025.bin
+========================================================================
+_work/mod_cg/ovl9_025.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (646 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (224 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (1768 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_026.bin
+========================================================================
+_work/mod_cg/ovl9_026.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (711 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (287 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (2008 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_027.bin
+========================================================================
+_work/mod_cg/ovl9_027.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (2992 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (1293 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (8168 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+     THUMB 0x000038E4  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x00003920  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x000050A4  add r0,#19 -- containing ARM word 0xEBFA3013  bl       0x-016EF08
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_028.bin
+========================================================================
+_work/mod_cg/ovl9_028.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (2235 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (937 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (5504 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_029.bin
+========================================================================
+_work/mod_cg/ovl9_029.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (4710 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (1885 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (12568 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+     THUMB 0x00006330  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x000066CC  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x000067A0  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x000067D4  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x000068AC  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+     THUMB 0x000068E0  add r0,#19 -- containing ARM word 0xE3A03013  mov     r3,#19
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     0 constant-returning stubs in the image
+     (this image has none: the 4080 sites here are not stubs)
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`
+
+########## ovl9_030.bin
+========================================================================
+_work/mod_cg/ovl9_030.bin -- every site the constant scan and the structure probe found
+========================================================================
+
+-- ARM immediate fields matching 4070, 4071, 4078, 4079, 4080 (1483 instructions scanned) --
+    none
+
+-- THUMB literal fields matching the same set (592 scanned) --
+    none
+
+-- 32-bit words in the pool equal to one of the constants (4424 words scanned) --
+    none
+
+-- the structure probe's sites --
+
+   * every immediate equal to 0xFF00 (the control-register refill would be an `orr`)
+
+   * every `lsl #20` immediately followed by `lsr #20` (the twelve-bit mask)
+
+   * every `add #19`, both instruction sets
+
+   * what the 4080 sites actually are, form 1: constant-returning stubs
+     On *Tales of the Tempest* the `mov r0,#4080` instructions all sat in one
+     region of eight-byte stubs -- `mov r0,#K ; bx lr` or `ldr r0,[pc,..] ;
+     bx lr` -- reached by a table of `b` instructions above them, which is
+     the ARM computed-branch idiom.  What they returned was a 4,096-scaled
+     trigonometric table in whole degrees.
+     1 constant-returning stubs in the image
+     the first 0 are round(4096 * cos(theta)) for theta = 0..-1 degrees, to within one
+     first twelve: 89
+     round(4096 * cos 5deg) = 4080 -- which is the 4080
+
+
+   * what the 4080 sites actually are, form 2: a plain table of words
+     The same table can be emitted as an ordinary array rather than as
+     compiled stubs, and then a literal-pool hit sits inside it and no
+     PC-relative load points at any individual entry.  For every unreferenced
+     4080 word this checks whether the words around it are
+     round(4096 * cos theta) for whole degrees, which is what
+     `round(4096 * cos 5 deg) = 4080` makes likely.
+     no unreferenced literal-pool hit to test
+     round(4096 * cos 5 deg) = 4080
+
+   * every `and #15` within eight instructions of an ARM `lsr #4`

@@ -1,0 +1,48 @@
+m.b
+  entries       : 1522 table (1521 members + terminator)
+  byte order    : little-endian
+  entry size    : 0x2C   field mask 0x000F   word 0x00000101
+  table at      : 0x1C      first payload at 0x0
+  member bytes  : 65916661 of 67008 on disc (98371.33%)
+  build path    : 
+  build path raw: 
+m.dat
+  entries       : 4 table (3 members + terminator)
+  byte order    : little-endian
+  entry size    : 0x2C   field mask 0x000F   word 0x00000101
+  table at      : 0x1C      first payload at 0x0
+  member bytes  : 57910 of 65918912 on disc (0.09%)
+  build path    : 
+  build path raw: 
+char.b
+  entries       : 991 table (990 members + terminator)
+  byte order    : little-endian
+  entry size    : 0x2C   field mask 0x000F   word 0x00000001
+  table at      : 0x1C      first payload at 0x0
+  member bytes  : 15241323 of 43632 on disc (34931.53%)
+  build path    : 
+  build path raw: 
+t.dat
+  entries       : 49 table (48 members + terminator)
+  byte order    : little-endian
+  entry size    : 0x2C   field mask 0x000F   word 0x00000000
+  table at      : 0x1C      first payload at 0x890
+  member bytes  : 258351 of 260816 on disc (99.05%)
+  build path    : 
+  build path raw: 
+ItemIcon.b
+  entries       : 737 table (736 members + terminator)
+  byte order    : little-endian
+  entry size    : 0x08   field mask 0x0003   word 0x00000001
+  table at      : 0x1C      first payload at 0x0
+  member bytes  : 401264 of 5924 on disc (6773.53%)
+  build path    : 
+  build path raw: 
+debug.b
+  entries       : 162 table (161 members + terminator)
+  byte order    : little-endian
+  entry size    : 0x2C   field mask 0x000F   word 0x00000001
+  table at      : 0x1C      first payload at 0x0
+  member bytes  : 84150 of 7156 on disc (1175.94%)
+  build path    : 
+  build path raw: 

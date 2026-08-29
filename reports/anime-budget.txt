@@ -1,0 +1,36 @@
+the budget: every byte of anime.nds, 268435456 bytes
+
+  what                            count          bytes    share
+  container                          75       99635302   37.12%
+  voice                            4457       91039126   33.91%
+  video                              10       25775082    9.60%
+  music and effects                   1       21146560    7.88%
+  compressed                         15        5872380    2.19%
+  unknown                           552        3000820    1.12%
+  overlays, BLZ-packed (31 of them)       31        1028328    0.38%
+  ARM9, BLZ-packed                    1         432924    0.16%
+  ARM7                                1         159528    0.06%
+  font                                3         141916    0.05%
+  file name table                     1          42281    0.02%
+  file allocation table               1          41160    0.02%
+  cartridge header                    1          16384    0.01%
+  banner                              1           2560    0.00%
+  model                               1           2420    0.00%
+  overlay table                       1            992    0.00%
+  alignment slack between them                 1449281    0.54%
+  tail after the last file                    18648412    6.95%
+
+  sum of the pieces                          268435456  100.00%
+  image size                                 268435456
+  discrepancy                                        0   <- must be zero
+
+what the unused space is made of
+  alignment slack, first 1 MiB sampled: 10 distinct byte values
+      0xFF  1449269
+      0x00  3
+      0x0B  2
+      0x21  1
+  tail, first 4 MiB sampled: 1 distinct byte values
+      0xFF  4194304
+  the tail deflates to 0.0974% of itself -- fill this compressible
+  is free space; incompressible fill would not be.
