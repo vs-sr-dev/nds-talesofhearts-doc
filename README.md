@@ -115,6 +115,47 @@ edition is stereo on seven. The saved space is left as `0xFF`.
 
 ---
 
+## What the next build says about these cartridges
+
+*Tales of Graces* (Nintendo Wii, 10 December 2009) is the sixteenth build in
+the corpus, one year after these cartridges, and it bears on three of the
+findings here.
+
+**`FPS4` has now crossed three machines and two byte orders.** It is on
+*Vesperia*'s Xbox 360 disc big-endian, on these cartridges little-endian, and
+on the 2009 Wii disc **big-endian** again — 8,064 magic hits and 4,832 archives
+— with the same 0x1C header and the same field-mask semantics. `fps4.py` as
+repaired here read that disc without modification, including a mask value
+`0x010F` the corpus had not seen; the `0x0001` implicit-size form that cost
+1,904 archives here does not occur there. **The byte order is the machine's
+and the structure is the line's**, on a third machine.
+
+**The project number runs on, and the fourth spelling is the machine one.**
+`TO7` *Abyss*, `TO8` *Vesperia*, `TO9` here — and **`TO10`** there, in nineteen
+distinct spellings in `main.dol` alone: a devkit path `sim:C:/usr/TO10/data/btl/`,
+sixteen menu-task names, a version banner `TO10_chat_v0.50`, and two more as
+class names in the modules' symbol tables. The analogue of this cartridge's
+`TODS9` exists — **`TO10DS`** — but the analogue of `TODS3`, a second count of
+titles on one machine, does **not**.
+
+**And it ships a Nintendo DS build from inside the line, whose provenance is
+not in question.** `/ds/to10dsR.srl` on that disc is a complete DS ROM, game
+title `ToG_DS`, banner `TO10DS` / かめにんマーチャント！, sent to a handheld by
+DS Download Play. Its ARM9 is `BLZ`-packed — step zero applies in the middle
+of a Wii game — and the `BLZ` reader repaired here decompresses it to 1,351,352
+bytes, in which there are **zero 4078 / 4079 / 4070 / 4071 in either ARM
+encoding** over 67,002 ARM immediates, 98,937 THUMB literals, 376,970 aligned
+words and 16,081 distinct load targets, and zero fingerprint clusters.
+
+That is a fourth ARM zero, and it is the first one whose developer is not in
+doubt: the Wii disc it sits inside carries the codec twice and names Namco
+Tales Studio by its own corporate domain. **One project, two machines, and the
+codec on one of them.** It does not turn the ARM zeros into a same-toolchain
+result — no ARM build carrying this codec is known and that caveat stands — but
+it removes the last reading in which an ARM zero could be a fact about who
+wrote the cartridge.
+[wii-talesofgraces-doc](https://github.com/vs-sr-dev/wii-talesofgraces-doc)
+
 ## Status of every claim
 
 | Claim | Status | Evidence |
