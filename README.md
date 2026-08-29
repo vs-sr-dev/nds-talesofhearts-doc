@@ -130,13 +130,30 @@ repaired here read that disc without modification, including a mask value
 1,904 archives here does not occur there. **The byte order is the machine's
 and the structure is the line's**, on a third machine.
 
+**And on the fourth it is gone.** *Tales of Xillia* (PlayStation 3, 2011)
+returns **zero `FPS4` hits over 6,949,961,728 bytes**, and zero `MSCF`,
+`CPK ` and `CRILAYLA` with them: that build declines every container and every
+compressor this corpus tracks, and ships one of each of its own. **What crossed
+to it instead is this cartridge's other convention** — the index/payload
+split. `m.b`/`m.dat` here and `.txm`/`.txv` on the 2009 Wii disc are two files;
+on that build they are two **adjacent members of one container**, the header at
+index *i* and its payload at *i*+1, and it holds on **51,694 pairs with zero
+exceptions**. Section 7 asks for the pairing to be measured rather than
+inferred from the names, and that is the first build in the corpus where it
+comes back clean on every pair.
+[ps3-talesofxillia-doc](https://github.com/vs-sr-dev/ps3-talesofxillia-doc).
+
 **The project number runs on, and the fourth spelling is the machine one.**
 `TO7` *Abyss*, `TO8` *Vesperia*, `TO9` here — and **`TO10`** there, in nineteen
 distinct spellings in `main.dol` alone: a devkit path `sim:C:/usr/TO10/data/btl/`,
 sixteen menu-task names, a version banner `TO10_chat_v0.50`, and two more as
 class names in the modules' symbol tables. The analogue of this cartridge's
 `TODS9` exists — **`TO10DS`** — but the analogue of `TODS3`, a second count of
-titles on one machine, does **not**.
+titles on one machine, does **not**. Nor does it on `TO11` (*Xillia*, PS3,
+2011), where `TOPS3`, `TOP311`, `TOPS311` and `TOPS3_11` are all zero and the
+tag is instead the **root C++ namespace of the whole game**. So the
+second-numbering-by-machine convention is this cartridge's alone, on three
+builds that could have repeated it and did not.
 
 **And it ships a Nintendo DS build from inside the line, whose provenance is
 not in question.** `/ds/to10dsR.srl` on that disc is a complete DS ROM, game
